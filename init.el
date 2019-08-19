@@ -12,9 +12,11 @@
   (mapc (lambda (x)
           (add-to-list 'load-path (expand-file-name x emacs-git)))
         (delete ".." (directory-files emacs-git))))
+(add-to-list 'load-path (expand-file-name "elpa/" emacs-d))
 (add-to-list 'load-path emacs-d)
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
-(add-to-list 'load-path (expand-file-name "elpa/" emacs-d))
+(add-to-list 'load-path (expand-file-name "personal/" emacs-d))
+(add-to-list 'load-path (expand-file-name "personal/modes/" emacs-d))
 (setq enable-local-variables :all)
 ;;* Font
 (defun ora-set-font (&optional frame)
@@ -251,8 +253,8 @@
 (use-package helm-make
   :commands (helm-make helm-make-projectile)
   :config (setq helm-make-completion-method 'ivy))
-;; (setq abbrev-file-name
-;;       (concat emacs-d "personal/abbrev_defs"))
+(setq abbrev-file-name
+      (concat emacs-d "personal/abbrev_defs"))
 (use-package flyspell
   :commands flyspell-mode
   :config (require 'ora-flyspell))
@@ -308,6 +310,7 @@
 (use-package htmlize
   :commands htmlize-buffer)
 (lispy-mode)
+(require 'personal-init nil t)
 ;; (unless (bound-and-true-p ora-barebones)
 ;;   (run-with-idle-timer
 ;;    3 nil
