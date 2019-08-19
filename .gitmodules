@@ -1,0 +1,9 @@
+[submodule "git/lpy"]
+           path = git/lpy
+           url = https://github.com/abo-abo/lpy
+[submodule "git/org-mode"]
+           path = git/org-mode
+           url = https://github.com/abo-abo/org-mode
+[submodule "/home/chendao/.emacs.d/git/lpy"]
+	path = /home/chendao/.emacs.d/git/lpy
+	url = https://github.com/abo-abo/lpy
