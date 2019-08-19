@@ -19,6 +19,7 @@
     auctex
     auto-compile
     auto-yasnippet
+    bash-completion
     bbdb
     elfeed
     eglot
@@ -38,6 +39,7 @@
     function-args
     geiser
     google-c-style
+    groovy-mode
     gtk-pomodoro-indicator
     headlong
     helm-make

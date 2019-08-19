@@ -15,7 +15,7 @@
 (add-to-list 'load-path emacs-d)
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (add-to-list 'load-path (expand-file-name "elpa/" emacs-d))
-
+(setq enable-local-variables :all)
 ;;* Font
 (defun ora-set-font (&optional frame)
   (when frame
@@ -251,8 +251,8 @@
 (use-package helm-make
   :commands (helm-make helm-make-projectile)
   :config (setq helm-make-completion-method 'ivy))
-(setq abbrev-file-name
-      (concat emacs-d "personal/abbrev_defs"))
+;; (setq abbrev-file-name
+;;       (concat emacs-d "personal/abbrev_defs"))
 (use-package flyspell
   :commands flyspell-mode
   :config (require 'ora-flyspell))
@@ -304,3 +304,25 @@
   ;; (setq compilation-scroll-output 'next-error)
   ;; (setq compilation-skip-threshold 2)
   )
+(ace-popup-menu-mode)
+(use-package htmlize
+  :commands htmlize-buffer)
+(lispy-mode)
+;; (unless (bound-and-true-p ora-barebones)
+;;   (run-with-idle-timer
+;;    3 nil
+;;    (lambda () (require 'ora-org)))
+;;   (require 'define-word)
+;;   (use-package slime
+;;     :commands slime
+;;     :init
+;;     (require 'slime-autoloads)
+;;     (setq slime-contribs '(slime-fancy))
+;;     (setq inferior-lisp-program "/usr/bin/sbcl")))
+(use-package elf-mode
+  :commands elf-mode
+  :init
+  (add-to-list 'magic-mode-alist (cons "ELF" 'elf-mode)))
+(use-package groovy-mode)
+(add-to-list 'warning-suppress-types '(undo discard-info))
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))

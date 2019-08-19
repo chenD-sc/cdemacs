@@ -1,0 +1,42 @@
+[submodule "git/lpy"]
+	path = git/lpy
+	url = https://github.com/abo-abo/lpy
+[submodule "git/org-mode"]
+	path = git/org-mode
+	url = https://github.com/abo-abo/org-mode
+[submodule "git/clojure-semantic"]
+	path = git/clojure-semantic
+	url = https://github.com/abo-abo/clojure-semantic
+[submodule "git/abel"]
+	path = git/abel
+	url = https://github.com/abo-abo/abel
+[submodule "git/eltex"]
+	path = git/eltex
+	url = https://github.com/abo-abo/eltex
+[submodule "git/htmlize"]
+	path = git/htmlize
+	url = https://github.com/abo-abo/htmlize
+[submodule "git/profile-dotemacs"]
+	path = git/profile-dotemacs
+	url = https://github.com/abo-abo/profile-dotemacs
+[submodule "git/org-fu"]
+	path = git/org-fu
+	url = https://github.com/abo-abo/org-fu
+[submodule "git/soap"]
+	path = git/soap
+	url = https://github.com/abo-abo/soap
+[submodule "git/cc-chainsaw"]
+	path = git/cc-chainsaw
+	url = https://github.com/abo-abo/cc-chainsaw
+[submodule "git/smex"]
+	path = git/smex
+	url = https://github.com/abo-abo/smex
+[submodule "git/plain-org-wiki"]
+	path = git/plain-org-wiki
+	url = https://github.com/abo-abo/plain-org-wiki
+[submodule "git/magit"]
+	path = git/magit
+	url = https://github.com/abo-abo/magit
+[submodule "git/org-pomodoro"]
+	path = git/org-pomodoro
+	url = https://github.com/abo-abo/org-pomodoro
