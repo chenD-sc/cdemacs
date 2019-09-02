@@ -13,6 +13,7 @@
           (add-to-list 'load-path (expand-file-name x emacs-git)))
         (delete ".." (directory-files emacs-git))))
 (add-to-list 'load-path (expand-file-name "elpa/" emacs-d))
+;; (add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
 (add-to-list 'load-path emacs-d)
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (add-to-list 'load-path (expand-file-name "personal/" emacs-d))
