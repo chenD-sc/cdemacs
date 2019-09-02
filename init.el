@@ -27,15 +27,20 @@
       (set-frame-font
        "DejaVu Sans Mono")
     (error
-     (set-frame-font
-      "Lucida Sans Typewriter"))))
+     (ignore-errors
+       (set-frame-font
+        "Lucida Sans Typewriter")))))
 (ora-set-font)
 (set-face-attribute 'default nil :height (if (eq system-type 'darwin) 120 113))
-(set-fontset-font t nil "Symbola" nil 'append)
+(ignore-errors
+  (set-fontset-font t nil "Symbola" nil 'append))
 (add-hook 'agter-make-frame-functions 'ora-set-font)
 ;;* Customize
 (defmacro csetq (variable value)
   `(funcall (or (get ',variable 'custom-set) 'set-default) ',variable ,value))
+(defun ora-advice-add (&rest args)
+  (when (fboundp 'advice-add)
+    (apply #'advice-add args)))
 ;;** decorations
 (csetq tool-bar-mode nil)
 (csetq menu-bar-mode nil)
@@ -316,17 +321,17 @@
   :commands htmlize-buffer)
 (lispy-mode)
 (require 'personal-init nil t)
-(unless (bound-and-true-p ora-barebones)
-  (run-with-idle-timer
-   3 nil
-   (lambda () (require 'ora-org)))
-  (require 'define-word)
-  (use-package slime
-    :commands slime
-    :init
-    (require 'slime-autoloads)
-    (setq slime-contribs '(slime-fancy))
-    (setq inferior-lisp-program "/usr/bin/sbcl")))
+;; (unless (bound-and-true-p ora-barebones)
+;;   (run-with-idle-timer
+;;    3 nil
+;;    (lambda () (require 'ora-org)))
+;;   (require 'define-word)
+;;   (use-package slime
+;;     :commands slime
+;;     :init
+;;     (require 'slime-autoloads)
+;;     (setq slime-contribs '(slime-fancy))
+;;     (setq inferior-lisp-program "/usr/bin/sbcl")))
 (use-package cook
   :commands cook)
 (use-package elf-mode
@@ -335,3 +340,9 @@
   (add-to-list 'magic-mode-alist (cons "ELF" 'elf-mode)))
 (add-to-list 'warning-suppress-types '(undo discard-info))
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+(ora-advice-add 'semantic-idle-scheduler-function :around #'ignore)
+(require 'server)
+(setq ora-startup-time-toc (current-time))
+(or (server-running-p) (server-start))
+(setq ora-startup-time-seconds
+      (time-to-seconds (time-subtract ora-startup-time-toc ora-startup-time-tic)))
