@@ -30,10 +30,10 @@
     company-jedi
     counsel
     define-word
-    diminish
     dockerfile-mode
     docker
     docker-tramp
+    diminish
     eclipse-theme
     find-file-in-project
     function-args
@@ -66,7 +66,6 @@
     ukrainian-holidays
     unicode-fonts
     use-package
-    vimish-fold
     wgrep
     which-key
     worf

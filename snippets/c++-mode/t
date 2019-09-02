@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: trace
+# key: t
+# --
+std::cout << "$1: " << $1 << std::endl;

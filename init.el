@@ -180,6 +180,8 @@
     (define-key yas-minor-mode-map [(tab)] nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (add-to-list 'warning-suppress-types '(yasnippet backquote-change))))
+(use-package diminish
+  :ensure t)
 (use-package auto-yasnippet
   :commands aya-create aya-open-line)
 (use-package iedit
@@ -217,6 +219,7 @@
     (when (display-graphic-p)
       (powerline-default-theme)
       (remove-hook 'focus-out-hook 'powerline-unset-selected-window))))
+
 (use-package uniquify
   :init
   (setq uniquify-buffer-name-style 'reverse)
@@ -296,6 +299,7 @@
                 (file-directory-p (concat project "/.git/"))))
             (projectile-relevant-known-projects))))))
 (use-package tea-time
+  :ensure t
   :config
   (setq tea-time-sound-command "play %s"))
 (use-package ace-link
@@ -312,21 +316,22 @@
   :commands htmlize-buffer)
 (lispy-mode)
 (require 'personal-init nil t)
-;; (unless (bound-and-true-p ora-barebones)
-;;   (run-with-idle-timer
-;;    3 nil
-;;    (lambda () (require 'ora-org)))
-;;   (require 'define-word)
-;;   (use-package slime
-;;     :commands slime
-;;     :init
-;;     (require 'slime-autoloads)
-;;     (setq slime-contribs '(slime-fancy))
-;;     (setq inferior-lisp-program "/usr/bin/sbcl")))
+(unless (bound-and-true-p ora-barebones)
+  (run-with-idle-timer
+   3 nil
+   (lambda () (require 'ora-org)))
+  (require 'define-word)
+  (use-package slime
+    :commands slime
+    :init
+    (require 'slime-autoloads)
+    (setq slime-contribs '(slime-fancy))
+    (setq inferior-lisp-program "/usr/bin/sbcl")))
+(use-package cook
+  :commands cook)
 (use-package elf-mode
   :commands elf-mode
   :init
   (add-to-list 'magic-mode-alist (cons "ELF" 'elf-mode)))
-(use-package groovy-mode)
 (add-to-list 'warning-suppress-types '(undo discard-info))
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
