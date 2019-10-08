@@ -45,8 +45,7 @@
   (add-to-list 'prettify-symbols-alist
                '(":PROPERTIES:" . ":"))
   (prettify-symbols-mode)
-  (setq-local tab-always-indent 'complete)
-  (orly-setup-completion))
+  (setq-local tab-always-indent 'complete))
 
 ;;;###autoload
 (defun ora-org-agenda-hook ())
@@ -67,7 +66,7 @@
 (define-key org-mode-map (kbd "M-r") 'org-ctrl-c-ctrl-c)
 (define-key org-src-mode-map (kbd "C-c C-c") nil)
 (define-key org-src-mode-map (kbd "C-σ") 'org-edit-src-exit)
-(advice-add 'org-edit-src-exit :after (lambda (&rest _) (save-buffer)))
+(ora-advice-add 'org-edit-src-exit :after (lambda (&rest _) (save-buffer)))
 (define-key org-mode-map (kbd "C-c C-v") nil)
 (define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)
 (define-key org-agenda-mode-map (kbd "<backspace>") 'ora-org-agenda-unmark-backward)
@@ -621,9 +620,6 @@ _y_: ?y? year       _q_: quit           _L__l__c_: log = ?l?"
         (org-babel-do-key-sequence-in-edit-buffer (kbd "TAB"))
       (completion-at-point))))
 
-;; work-around for "L" key being sent on Firefox 60
-(add-to-list 'org-capture-templates (cons "L" (cdr (assoc "l" org-capture-templates))))
-
 (defun ora-git-refile ()
   (interactive)
   (let* ((default-directory "~/Dropbox/org")
@@ -667,4 +663,5 @@ _y_: ?y? year       _q_: quit           _L__l__c_: log = ?l?"
             (ora-org-delete-element)))))
     (save-buffer)))
 
+(require 'pora-org nil t)
 (provide 'ora-org)

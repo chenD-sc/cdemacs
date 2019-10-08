@@ -29,6 +29,12 @@
 ;; (global-set-key "\C-y" 'yank)                         ; default
 (global-set-key (kbd "C-z") 'capitalize-word-toggle)     ; capitili[z]e
 (global-set-key (kbd "C-.") 'comment-dwim)
+
+;; alacritty translations
+(keyboard-translate (aref (kbd "‣") 0) (aref (kbd "C-,") 0))
+(keyboard-translate (aref (kbd "•") 0) (aref (kbd "C-.") 0))
+(keyboard-translate (aref (kbd "δ") 0) (aref (kbd "C-:") 0))
+
 (global-set-key (kbd "C-,") 'lispy-kill-at-point)
 (global-set-key (kbd "C-'") 'avy-goto-char-timer)
 (global-set-key (kbd "C-/") 'hydra-org-objects/body)
@@ -118,13 +124,13 @@
 (global-set-key (kbd "C-c i") 'counsel-semantic)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
-(global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-c k") 'counsel-rg)
+(global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c m") 'counsel-linux-app)
 (global-set-key (kbd "C-c n") 'counsel-fzf)
 (global-set-key (kbd "C-c o") 'counsel-outline)
-(global-set-key (kbd "C-c q") nil)
+(global-set-key (kbd "C-c P") 'counsel-package)
 (global-set-key (kbd "C-c r") 'isearch-backward)
 (global-set-key (kbd "C-c s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-s") 'swiper-isearch)
@@ -141,7 +147,8 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c C-j") 'avy-resume)
 (global-set-key (kbd "C-π") 'avy-resume)
-(global-set-key (kbd "C-c n") 'counsel-fzf)
+(global-set-key (kbd "C-c .") 'org-time-stamp)
+(global-set-key (kbd "C-c R") 'counsel-register)
 
 ;;* C-x shortcuts
 (global-set-key (kbd "C-x C-r") (lambda () (interactive) (revert-buffer nil t)))
