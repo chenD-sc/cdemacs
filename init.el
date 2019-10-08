@@ -346,3 +346,17 @@
 (or (server-running-p) (server-start))
 (setq ora-startup-time-seconds
       (time-to-seconds (time-subtract ora-startup-time-toc ora-startup-time-tic)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode worf which-key wgrep vimish-fold use-package unicode-fonts ukrainian-holidays tea-time smex slime rust-mode request rainbow-mode projectile powerline org-parser org-download org-bullets netherlands-holidays markdown-mode make-it-so magit lispy jedi j-mode ivy-hydra helm-make headlong gtk-pomodoro-indicator groovy-mode google-c-style geiser function-args find-file-in-project evil elfeed eglot eclipse-theme dockerfile-mode docker diminish define-word company-jedi command-log-mode cmake-mode bbdb bash-completion auto-yasnippet auto-compile auctex alert ace-popup-menu))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
