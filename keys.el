@@ -58,6 +58,7 @@
 (global-set-key (kbd "C--") 'org-capture)                      ; [a]
 ;; (global-set-key (kbd "C-_") 'undo)                          ; [u]
 (global-set-key (kbd "C-:") 'ora-dired-jump)                   ; [d]
+;; (global-set-key (kbd "C-φ") nil)
 (global-set-key (kbd "C->") 'upcase-word-toggle)               ; [g]
 (global-set-key (kbd "C-η") 'switch-to-buffer-other-window)    ; [h]
 (global-set-key (kbd "C-;") nil)                               ; [j]
@@ -78,7 +79,7 @@
 ;; (global-set-key (kbd "~") 'self-insert-command)           ; [t]
 (global-set-key "υ" 'aya-expand)                             ; [y]
 (global-set-key "ψ" 'universal-argument)                     ; [u]
-;; (global-set-key (kbd "TAB") 'self-insert-command)         ; [i]
+(global-set-key "ϊ" 'hydra-avy/body)
 ;; (global-set-key (kbd "DEL") 'self-insert-command)         ; [o]
 (global-set-key (kbd "π") 'avy-goto-char)                    ; [p]
 ;; (global-set-key (kbd "-") 'self-insert-command)           ; [a]
@@ -121,7 +122,7 @@
 (global-set-key (kbd "C-c G") 'counsel-git)
 (global-set-key (kbd "C-c g") 'ora-counsel-git)
 (global-set-key (kbd "C-c h") 'hydra-apropos/body)
-(global-set-key (kbd "C-c i") 'counsel-semantic)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
 (global-set-key (kbd "C-c k") 'counsel-rg)
@@ -225,8 +226,9 @@
   ("r" (counsel-rhythmbox 1) "rhythmbox")
   ("o" ccc-toggle-header-source "other")
   ("G" ora-github "github")
-  ("g" (counsel-rg "" default-directory) "rg")
+  ("g" counsel-search "incremental search")
   ("p" ora-project "project")
+  ("s" hydra-search/body "search")
   ("n" ora-open-wikitionary "wikitionary")
   ("N" ora-open-google-translate "google-translate")
   ("f" (if (region-active-p)
@@ -236,6 +238,8 @@
   ("w" plain-org-wiki "wiki")
   ("W" ora-open-wikipedia "wikipedia")
   ("q" nil "quit"))
+
+(autoload 'hydra-search/body "ora-search")
 
 (defhydra hydra-vimish-fold (:color blue
                              :columns 3)
