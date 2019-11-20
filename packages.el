@@ -32,16 +32,15 @@
     company-jedi
     counsel
     define-word
+    diminish
     dockerfile-mode
     docker
     docker-tramp
-    diminish
     eclipse-theme
     find-file-in-project
     function-args
     geiser
     google-c-style
-    groovy-mode
     gtk-pomodoro-indicator
     haskell-mode
     headlong
