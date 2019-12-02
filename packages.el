@@ -54,9 +54,12 @@
     make-it-so
     markdown-mode
     netherlands-holidays
+    orca
     org-bullets
     org-download
+    org-parser
     projectile
+    plain-org-wiki
     posframe
     powerline
     rainbow-mode
@@ -81,6 +84,18 @@
   (unless (package-installed-p package)
     (ignore-errors
       (package-install package))))
+
+(let ((org-version '(9 2 6)))
+  (unless (file-exists-p
+           (concat
+            "elpa/org-"
+            (mapconcat #'number-to-string org-version ".")))
+    (package-install
+     (package-desc-create
+      :name 'org
+      :version org-version
+      :archive "gnu"
+      :kind 'tar))))
 
 ;; upgrade installed
 (save-window-excursion

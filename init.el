@@ -177,6 +177,7 @@
 (use-package tiny
   :commands tiny-expand)
 (require 'warnings)
+(use-package diminish)
 (use-package yasnippet
   :diminish yas-minor-mode
   :config
@@ -189,8 +190,6 @@
     (define-key yas-minor-mode-map [(tab)] nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (add-to-list 'warning-suppress-types '(yasnippet backquote-change))))
-(use-package diminish
-  :ensure t)
 (use-package auto-yasnippet
   :commands aya-create aya-open-line)
 (use-package iedit
@@ -307,7 +306,6 @@
                 (file-directory-p (concat project "/.git/"))))
             (projectile-relevant-known-projects))))))
 (use-package tea-time
-  :ensure t
   :config
   (setq tea-time-sound-command "play %s"))
 (use-package ace-link
