@@ -2,6 +2,7 @@
 (require 'dired-x)
 (require 'dired-aux)
 (require 'term)
+
 ;;* set
 (setq dired-listing-switches
       (if (memq system-type '(windows-nt darwin))
