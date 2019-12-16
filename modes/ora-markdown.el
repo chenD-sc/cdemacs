@@ -1,17 +1,22 @@
 (require 'markdown-mode)
 
-(define-key markdown-mode-map (kbd "C-c C-c") 'server-edit)
+(defun ora-server-edit ()
+  (interactive)
+  (save-buffer)
+  (server-edit))
+
+(define-key markdown-mode-map (kbd "C-c C-c") #'ora-server-edit)
 (define-key markdown-mode-map (kbd "<tab>") nil)
 (define-key markdown-mode-map (kbd "C-;") 'tiny-expand)
 (define-key markdown-mode-map (kbd "C-c r") 'markdown-pre-region)
-(define-key markdown-mode-map (kbd "C-c s") 'ora-markdown-stack-block)
+(define-key markdown-mode-map (kbd "C-c S") 'ora-markdown-stack-block)
 (define-key markdown-mode-map (kbd "M-p") nil)
 (define-key markdown-mode-map (kbd "C-M-i") nil)
 
 ;;;###autoload
 (defun ora-markdown-hook ()
-  (flyspell-mode)
-  (pandoc-mode))
+  (setq fill-column 100)
+  (flyspell-mode))
 
 (setq markdown-metadata-key-face 'default)
 (setq markdown-metadata-value-face 'default)
