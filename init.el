@@ -5,11 +5,15 @@
    (file-chase-links load-file-name))
   "The giant turtle on which the world rests.")
 (setq ora-startup-time-tic (current-time))
+
+;; !!!!Temp add for normal init
+(package-initialize)
+
 (let ((emacs-git (expand-file-name "git/" emacs-d)))
   (mapc (lambda (x)
           (add-to-list 'load-path (expand-file-name x emacs-git)))
         (delete "." (delete ".." (directory-files emacs-git)))))
-(add-to-list 'load-path (expand-file-name "elpa/" emacs-d))
+(add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
 (add-to-list 'load-path emacs-d)
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (add-to-list 'load-path (expand-file-name "personal/" emacs-d))
