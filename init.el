@@ -7,7 +7,12 @@
 (setq ora-startup-time-tic (current-time))
 
 ;; !!!!Temp add for normal init
-(package-initialize)
+(setq package-user-dir
+     (expand-file-name "elpa" emacs-d))
+;; (let ((emacs-git (expand-file-name "git/" emacs-d)))
+;;  (mapc (lambda (x)
+;;          (add-to-list 'load-path (expand-file-name x emacs-git)))
+;;        (delete ".." (directory-files emacs-git))))))
 
 (let ((emacs-git (expand-file-name "git/" emacs-d)))
   (mapc (lambda (x)
@@ -20,11 +25,14 @@
 (add-to-list 'load-path (expand-file-name "personal/modes/" emacs-d))
 (setq enable-local-variables :all)
 
+;; temp add
+(package-initialize)
+
 ;;* straight.el
-(if t
-    (require 'ora-straight)
-  (setq package-user-dir (expand-file-name "elpa" emacs-d))
-  (package-initialize))
+;; (if t
+;;     (require 'ora-straight)
+;;   (setq package-user-dir (expand-file-name "elpa" emacs-d))
+;;   (package-initialize))
 
 ;;* Font
 (defun ora-set-font (&optional frame)
@@ -98,9 +106,6 @@
 (csetq display-time-default-load-acerage nil)
 (csetq display-time-format "")
 ;;** email
-
-
-
 
 ;;** Rest
 (csetq browse-url-browser-function 'browse-url-firefox)
@@ -327,17 +332,17 @@
   :commands htmlize-buffer)
 (lispy-mode)
 (require 'personal-init nil t)
-;; (unless (bound-and-true-p ora-barebones)
-;;   (run-with-idle-timer
-;;    3 nil
-;;    (lambda () (require 'ora-org)))
-;;   (require 'define-word)
-;;   (use-package slime
-;;     :commands slime
-;;     :init
-;;     (require 'slime-autoloads)
-;;     (setq slime-contribs '(slime-fancy))
-;;     (setq inferior-lisp-program "/usr/bin/sbcl")))
+(unless (bound-and-true-p ora-barebones)
+  (run-with-idle-timer
+   3 nil
+   (lambda () (require 'ora-org)))
+  (require 'define-word)
+  (use-package slime
+    :commands slime
+    :init
+    (require 'slime-autoloads)
+    (setq slime-contribs '(slime-fancy))
+    (setq inferior-lisp-program "/usr/bin/sbcl")))
 (use-package cook
   :commands cook)
 (use-package elf-mode
