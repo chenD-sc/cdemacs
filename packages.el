@@ -12,6 +12,7 @@
     bbdb
     elf-mode
     elfeed
+    (eltex :host github :repo "abo-abo/eltex")
     eglot
     evil
     exec-path-from-shell
@@ -21,6 +22,7 @@
     company
     company-jedi
     counsel
+    (clojure-semantic :host github :repo "abo-abo/clojure-semantic")
     define-word
     diminish
     dired-rsync
@@ -38,6 +40,7 @@
     headlong
     helm-make
     hideshowvis
+    (htmlize :host github :repo "abo-abo/hemlize")
     ivy-hydra
     j-mode
     jedi
@@ -50,6 +53,7 @@
     org-bullets
     org-download
     org-parser
+    (ora-pomodoro :host github :repo "abo-abo/org-pomodoro")
     projectile
     plain-org-wiki
     posframe
@@ -58,7 +62,7 @@
     request
     rust-mode
     slime
-    smex
+    (smex :host github :repo "abo-abo/smex")
     swiper
     tea-time
     transpose-frame

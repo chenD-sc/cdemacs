@@ -989,7 +989,6 @@ wmctrl -r \"emacs@firefly\" -e \"1,0,0,1280,720\""))
       (when (and (eolp) (not (eq (char-before) ?.)))
         (insert ".")))
     (goto-char (point-min))
-
     (while (re-search-forward "\n\n+\\*" nil t)
       (replace-match "\n*" nil t))
     (goto-char (point-min))
