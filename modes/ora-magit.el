@@ -194,18 +194,6 @@
            (when (looking-at ":")
              (forward-char 2))))))
 
-(defun endless/add-PR-fetch ()
-  "If refs/pull is not defined on a GH repo, define it."
-  (interactive)
-  (let ((fetch-address "+refs/pull/*/head:refs/pull/origin/*"))
-    (unless (member fetch-address
-                    (magit-get-all "remote" "origin" "fetch"))
-      (when (string-match
-             "github" (magit-get "remote" "origin" "url"))
-        (magit-git-string
-         "config" "--add" "remote.origin.fetch"
-         fetch-address)))))
-
 (defun ora-magit-visit-item-other-window ()
   (interactive)
   (magit-visit-item t))
@@ -213,19 +201,41 @@
 (defun ora-magit-simple-commit ()
   (interactive)
   (save-window-excursion
-    (let ((item (magit-section-info (magit-current-section))))
+    (let ((item (magit-section-info (magit-current-section)))
+          action)
       (ignore-errors (magit-stage-item))
       (search-forward item)
+      (setq action (if (looking-back "^\tNew.*" (line-beginning-position))
+                       "Add"
+                     "Update"))
       (ora-magit-commit-add-log)
-      (insert "Update")
+      (insert action)
       (git-commit-commit))))
 
 (defun ora-magit-difftool ()
   (interactive)
   (let ((item (magit-section-info (magit-current-section))))
-    (ora-dired-start-process
+    (orly-start
      "git difftool" (list item))))
 
-;; (add-hook 'magit-mode-hook #'endless/add-PR-fetch)
+(defun ora-new-gitlab-project (name)
+  (interactive "sname: ")
+  (unless (file-exists-p "data")
+    (error "Expected ./data/"))
+  (let ((url (format "git@throw-away:throw-away/%s" name)))
+    (sc (concat "cd data && "
+                "git init && "
+                "git checkout -b data &&"
+                "git add . && "
+                "git commit -m 'Initial import' && "
+                "git remote add origin " url))
+    (sc "git init")
+    (sc "git add .")
+    (sc "git rm -r -f --cached data")
+    (sc (concat "git remote add origin " url))
+    (sc (concat "git submodule add -b data " url " data/"))
+    (sc "git commit -m 'Initial import'")
+    (sc "git push -f -u origin master")
+    (sc "cd data && git push -u origin data")))
 
 (provide 'ora-magit)
