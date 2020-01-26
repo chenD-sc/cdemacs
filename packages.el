@@ -23,11 +23,13 @@
     counsel
     define-word
     diminish
+    dired-rsync
     dockerfile-mode
     docker
     docker-tramp
     eclipse-theme
     find-file-in-project
+    flycheck
     function-args
     geiser
     (google-c-style :host github :repo "google/styleguide" :branch "gh-pages")
@@ -92,4 +94,3 @@
 
 (dolist (package ora-packages)
   (straight-use-package package))
-;; (straight-pull-all)

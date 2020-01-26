@@ -27,6 +27,9 @@ pull:
 	git submodule init 2>&1 | tee -a etc/log
 	git submodule update 2>&1 | tee -a etc/log
 
+update:
+	$(emacs) -batch -l packages.el -f straight-pull-all 2>&1 | tee -a etc/log
+
 upgrade: pull
 	cd $(BASEDIR) && $(emacs) -batch -l packages.el 2>&1 | tee -a etc/log
 
@@ -36,4 +39,4 @@ up: upgrade
 run:
 	$(emacs) -Q -l init.el
 
-.PHONY: profile install install-git upgrade run up pull
+.PHONY: profile install install-git upgrade update up pull
