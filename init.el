@@ -7,8 +7,6 @@
 (setq ora-startup-time-tic (current-time))
 
 ;; !!!!Temp add for normal init
-(setq package-user-dir
-     (expand-file-name "elpa" emacs-d))
 ;; (let ((emacs-git (expand-file-name "git/" emacs-d)))
 ;;  (mapc (lambda (x)
 ;;          (add-to-list 'load-path (expand-file-name x emacs-git)))
@@ -26,6 +24,7 @@
 (setq enable-local-variables :all)
 
 ;; temp add
+(setq package-user-dir (expand-file-name "elpa" emacs-d))
 (package-initialize)
 
 ;;* straight.el
@@ -49,7 +48,7 @@
 (set-face-attribute 'default nil :height (if (eq system-type 'darwin) 120 113))
 (ignore-errors
   (set-fontset-font t nil "Symbola" nil 'append))
-(add-hook 'agter-make-frame-functions 'ora-set-font)
+(add-hook 'after-make-frame-functions 'ora-set-font)
 ;;* Customize
 (defmacro csetq (variable value)
   `(funcall (or (get ',variable 'custom-set) 'set-default) ',variable ,value))

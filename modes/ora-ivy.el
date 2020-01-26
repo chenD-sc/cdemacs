@@ -55,18 +55,10 @@
       (concat "git --no-pager grep --full-name -n --no-color -i -e '%s' -- './*' "
               (mapconcat (lambda (x) (format "':!*.%s'" x))
                          '("htm" "so" "a" "TTC" "NDS" "png" "md5") " ")))
-(setq counsel-git-grep-projects-alist
-      (list
-       (cons "/home/oleh/Dropbox/source/site-lisp/"
-             (concat "/home/oleh/Dropbox/source/site-lisp/etc/git-multi-grep '%s' "
-                     "/home/oleh/Dropbox/source/site-lisp 'git/*'"))
-       (cons "/home/oleh/git/ivy-dependencies/"
-             (concat "/home/oleh/Dropbox/source/site-lisp/etc/git-multi-grep '%s' "
-                     "/home/oleh/git/ivy-dependencies '*'"))))
 
 (defun ora-counsel-git ()
   (interactive)
-  (let ((counsel-git-cmd "rg --files"))
+  (let ((counsel-git-cmd "rg -0 --files"))
     (counsel-git)))
 
 (defun ivy-view-backtrace ()
@@ -142,5 +134,12 @@
 
 (define-key isearch-mode-map (kbd "C-c s") 'swiper-isearch-toggle)
 (define-key swiper-map (kbd "C-c s") 'swiper-isearch-toggle)
+(define-key ivy-occur-grep-mode-map (kbd "M-i") #'ora-ivy-occur-grep-iedit)
+
+(defun ora-ivy-occur-grep-iedit ()
+  (interactive)
+  (when buffer-read-only
+    (ivy-wgrep-change-to-wgrep-mode))
+  (iedit-mode))
 
 (provide 'ora-ivy)
