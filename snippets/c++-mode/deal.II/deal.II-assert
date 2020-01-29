@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: dealii assert
-# key: asn
-# --
-Assert(false, ExcNotImplemented());

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: package
-# condition: (< aya-invokation-point 10)
-# key: p
-# --
-`(insert (concat "package " (java-package-name (buffer-file-name)) ";\n"))`

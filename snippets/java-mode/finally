@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: finally
-# key: f
-# --
- finally {
- $0
-}

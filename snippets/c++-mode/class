@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-#name : class ... { ... }
-# --
-class $1$2
-{
-public:
- $1($0)
-};

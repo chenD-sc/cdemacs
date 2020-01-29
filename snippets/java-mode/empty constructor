@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: empty constructor
-# key: ec
-# --
-public `(java-prev-class)`() {}
- 

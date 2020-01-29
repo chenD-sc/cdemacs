@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: dealii assert ExcInternalError
-# key: asi
-# --
-Assert($0,
-              ExcInternalError());

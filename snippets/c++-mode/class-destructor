@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: destructor
-# key: ~
-# --
-~`(progn (ccc-ensure-public)(moo-c++-class-name))`()
