@@ -1,14 +1,22 @@
 ;;* packages
 (defconst ora-packages
-  '(ace-window
+  '((ace-window :host github :repo "abo-abo/ace-window")
+    auto-yasnippet
     (avy :host github :repo "abo-abo/avy")
+    counsel
     diminish
     (eclipse-theme :host github :repo "abo-abo/eclipse-theme")
+    elf-mode
+    headlong
+    (iedit :host github :repo "abo-abo/iedit")
+    j-mode
     (lispy :host github :repo "abo-abo/lispy")
+    powerline
     slime
     (smex :host github :repo "abo-abo/smex")
     (swiper :host github :repo "abo-abo/swiper")
-    use-package)
+    use-package
+    yasnippet)
   "List of packages that I like.")
 
 (setq straight-built-in-pseudo-packages
