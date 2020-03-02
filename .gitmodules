@@ -1,0 +1,6 @@
+[submodule "site-lisp/extensions/magit"]
+	path = site-lisp/extensions/magit
+	url = https://github.com/magit/magit
+[submodule "site-lisp/extensions/lispy"]
+	path = site-lisp/extensions/lispy
+	url = https://github.com/abo-abo/lispy
