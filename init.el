@@ -4,10 +4,14 @@
   (file-name-directory
    (file-chase-links load-file-name))
   "The giant turtle on which the world rests.")
-(let ((emacs-git (expand-file-name "site-lisp/extensions/" emacs-d)))
-  (mapc (lambda (x)
-          (add-to-list 'load-path (expand-file-name x emacs-git)))
-        (delete "." (delete ".." (directory-files emacs-git)))))
+
+(defun add-subdirs-to-load-path (dir)
+  "Recursive add directories to `load-path'."
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list 'load-path dir)
+    (normal-top-level-add-subdirs-to-load-path)))
+(add-subdirs-to-load-path (expand-file-name "site-lisp/" emacs-d))
+
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (setq enable-local-variables :all)
 
@@ -92,7 +96,19 @@
 (setq version-control t)
 (setq create-lockfiles nil)
 ;;* Bootstrap
+;;** autoloads
+
+;;** enable features
+(mapc (lambda (x) (put x 'disabled nil))
+      '(erase-buffer upcase-region downcase-region
+        dired-find-alternate-file narrow-to-region))
+;;** package.el
+(let ((file-name-handler-alist nil))
+  (require 'eclipse-theme)
+  (load-theme 'eclipse t)
+  (require 'smex))
 
 
 ;;*
 (require 'lispy)
+(require 'magit)

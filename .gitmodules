@@ -4,3 +4,18 @@
 [submodule "site-lisp/extensions/lispy"]
 	path = site-lisp/extensions/lispy
 	url = https://github.com/abo-abo/lispy
+[submodule "site-lisp/extensions/iedit"]
+	path = site-lisp/extensions/iedit
+	url = https://github.com/abo-abo/iedit
+[submodule "site-lisp/extensions/avy"]
+	path = site-lisp/extensions/avy
+	url = https://github.com/abo-abo/avy
+[submodule "site-lisp/extensions/swiper"]
+	path = site-lisp/extensions/swiper
+	url = https://github.com/abo-abo/swiper
+[submodule "site-lisp/extensions/hydra"]
+	path = site-lisp/extensions/hydra
+	url = https://github.com/abo-abo/hydra
+[submodule "site-lisp/extensions/eclipse-theme"]
+	path = site-lisp/extensions/eclipse-theme
+	url = https://github.com/abo-abo/eclipse-theme
