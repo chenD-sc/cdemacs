@@ -19,3 +19,15 @@
 [submodule "site-lisp/extensions/eclipse-theme"]
 	path = site-lisp/extensions/eclipse-theme
 	url = https://github.com/abo-abo/eclipse-theme
+[submodule "site-lisp/extensions/smex"]
+	path = site-lisp/extensions/smex
+	url = https://github.com/nonsequitur/smex
+[submodule "site-lisp/extensions/dash"]
+	path = site-lisp/extensions/dash
+	url = https://github.com/magnars/dash.el
+[submodule "site-lisp/extensions/with-editor"]
+	path = site-lisp/extensions/with-editor
+	url = https://github.com/magit/with-editor
+[submodule "site-lisp/extensions/transient"]
+	path = site-lisp/extensions/transient
+	url = https://github.com/magit/transient
