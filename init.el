@@ -3,12 +3,12 @@
   (file-name-directory
    (file-chase-links load-file-name))
   "The giant turtle on which the world rests.")
-(defun ora-subdirs-add (dir)
+(defun ora-add-subdirs (dir)
   "Recursive add directories to `load-path'."
   (let ((default-directory (file-name-as-directory dir)))
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
-(ora-subdirs-add (expand-file-name "site-lisp/" emacs-d))
+(ora-add-subdirs (expand-file-name "git/" emacs-d))
 
 ;;* Font
 (defun ora-set-font (&optional frame)
@@ -75,8 +75,6 @@
   (require 'eclipse-theme))
 
 ;;* Modes
-;;** global minor modes 
+;;** global minor modes
 (with-temp-message ""
   (require 'lispy))
-
-
