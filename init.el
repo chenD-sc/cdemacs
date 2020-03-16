@@ -9,6 +9,8 @@
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
 (ora-add-subdirs (expand-file-name "git/" emacs-d))
+(add-to-list 'load-path (expand-file-name "modes/" emacs-d))
+
 
 ;;* Font
 (defun ora-set-font (&optional frame)
@@ -78,3 +80,7 @@
 ;;** global minor modes
 (with-temp-message ""
   (require 'lispy))
+
+;;* Use Package
+;;** keys
+(require 'ora-keys)
