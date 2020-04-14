@@ -23,4 +23,12 @@
     (require 'init-customize)
 
     (require 'eclipse-theme)
-    (load-theme 'eclipse t)))
+    (load-theme 'eclipse t)
+
+    ;; 可以延后加载的
+    (run-with-idle-timer
+     1 nil
+     #'(lambda ()
+         (require 'init-eaf)
+         ))
+    ))

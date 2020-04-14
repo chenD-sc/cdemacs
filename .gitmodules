@@ -1,3 +1,6 @@
 [submodule "extensions/eclipse-theme"]
 	path = extensions/eclipse-theme
 	url = https://github.com/abo-abo/eclipse-theme
+[submodule "extensions/eaf"]
+	path = extensions/eaf
+	url = https://github.com/manateelazycat/emacs-application-framework
