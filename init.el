@@ -21,6 +21,7 @@
 
   (with-temp-message ""
     (require 'init-customize)
+    (require 'init-lispy)
 
     (require 'eclipse-theme)
     (load-theme 'eclipse t)

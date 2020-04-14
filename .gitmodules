@@ -4,3 +4,18 @@
 [submodule "extensions/eaf"]
 	path = extensions/eaf
 	url = https://github.com/manateelazycat/emacs-application-framework
+[submodule "extensions/lispy"]
+	path = extensions/lispy
+	url = https://github.com/abo-abo/lispy
+[submodule "extensions/iedit"]
+	path = extensions/iedit
+	url = https://github.com/abo-abo/iedit
+[submodule "extensions/avy"]
+	path = extensions/avy
+	url = https://github.com/abo-abo/avy
+[submodule "extensions/swiper"]
+	path = extensions/swiper
+	url = https://github.com/abo-abo/swiper
+[submodule "extensions/hydra"]
+	path = extensions/hydra
+	url = https://github.com/abo-abo/hydra
