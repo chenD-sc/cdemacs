@@ -1,21 +1,3 @@
-[submodule "git/magit"]
-	path = git/magit
-	url = https://github.com/magit/magit
-[submodule "git/eclipse-theme"]
-	path = git/eclipse-theme
+[submodule "extensions/eclipse-theme"]
+	path = extensions/eclipse-theme
 	url = https://github.com/abo-abo/eclipse-theme
-[submodule "git/lispy"]
-	path = git/lispy
-	url = https://github.com/abo-abo/lispy
-[submodule "git/iedit"]
-	path = git/iedit
-	url = https://github.com/abo-abo/iedit
-[submodule "git/avy"]
-	path = git/avy
-	url = https://github.com/abo-abo/avy
-[submodule "git/swiper"]
-	path = git/swiper
-	url = https://github.com/abo-abo/swiper
-[submodule "git/hydra"]
-	path = git/hydra
-	url = https://github.com/abo-abo/hydra
