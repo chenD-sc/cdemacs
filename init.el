@@ -8,6 +8,7 @@
 (defvar emacs-d (file-truename "~/.emacs.d/"))
 (ors-add-subdirs (expand-file-name "extensions/" emacs-d))
 (add-to-list 'load-path (expand-file-name "config/" emacs-d))
+(ors-add-subdirs (expand-file-name "sdcv-dict/" emacs-d))
 
 ;; Font
 (require 'init-font)
@@ -26,10 +27,15 @@
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
 
+    ;(require 'init-mode)
+
     ;; 可以延后加载的
     (run-with-idle-timer
      1 nil
      #'(lambda ()
+         ;;(require 'init-yasnippet)
+         
          (require 'init-eaf)
+         (require 'init-sdcv)
          ))
     ))

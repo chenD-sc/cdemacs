@@ -19,3 +19,15 @@
 [submodule "extensions/hydra"]
 	path = extensions/hydra
 	url = https://github.com/abo-abo/hydra
+[submodule "extensions/lpy"]
+	path = extensions/lpy
+	url = https://github.com/abo-abo/lpy
+[submodule "extensions/zoutline"]
+	path = extensions/zoutline
+	url = https://github.com/abo-abo/zoutline
+[submodule "extensions/sdcv"]
+	path = extensions/sdcv
+	url = https://github.com/manateelazycat/sdcv
+[submodule "extensions/posframe"]
+	path = extensions/posframe
+	url = https://github.com/tumashu/posframe
