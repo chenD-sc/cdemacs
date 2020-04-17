@@ -22,12 +22,15 @@
 
   (with-temp-message ""
     (require 'init-customize)
-    (require 'init-lispy)
-
+    
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
+    (require 'init-lispy)
+    (require 'paredit)
 
-    ;(require 'init-mode)
+    ;; (require 'init-mode)
+    (require 'init-paredit)
+    (require 'init-scheme)
 
     ;; 可以延后加载的
     (run-with-idle-timer
@@ -36,6 +39,4 @@
          ;;(require 'init-yasnippet)
          
          (require 'init-eaf)
-         (require 'init-sdcv)
-         ))
-    ))
+         (require 'init-sdcv)))))
