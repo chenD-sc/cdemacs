@@ -25,7 +25,7 @@
     
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
-    (require 'init-lispy)
+    ;; (require 'init-lispy)
     (require 'paredit)
 
     ;; (require 'init-mode)
