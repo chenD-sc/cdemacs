@@ -31,9 +31,6 @@
 [submodule "extensions/posframe"]
 	path = extensions/posframe
 	url = https://github.com/tumashu/posframe
-[submodule "extensions/geiser"]
-	path = extensions/geiser
-	url = https://github.com/abo-abo/geiser
 [submodule "extensions/paredit"]
 	path = extensions/paredit
 	url = https://github.com/emacsmirror/paredit
