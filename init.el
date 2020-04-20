@@ -25,12 +25,14 @@
     
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
-    ;; (require 'init-lispy)
-    ;; (require 'paredit)
+    (require 'lazy-load)
+    (require 'init-lispy)
+    (require 'paredit)
 
     ;; (require 'init-mode)
-    ;; (require 'init-paredit)
-    (require 'init-scheme)
+    (require 'init-paredit)
+    (require 'init-key)
+    ;; (require 'init-scheme)
 
     ;; 可以延后加载的
     (run-with-idle-timer
@@ -39,4 +41,4 @@
          ;;(require 'init-yasnippet)
          
          (require 'init-eaf)
-         (require 'init-sdcv)))))
+         ))))

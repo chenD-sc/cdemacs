@@ -28,11 +28,11 @@ The test for presence of the car of ELT-CONS is done with `equal'."
 
 ;; ### Auto-fill ###
 --- 自动换行
-;;(setq default-fill-column 100)
-;;(dolist (hook (list
-;;               'after-text-mode-hook
-;;               'message-mode-hook
-;;               ))
-;;  (add-hook hook '(lambda () (auto-fill-mode 1))))
+(setq default-fill-column 100)
+(dolist (hook (list
+              'after-text-mode-hook
+              'message-mode-hook
+              ))
+ (add-hook hook '(lambda () (auto-fill-mode 1))))
 
 (provide 'init-mode)

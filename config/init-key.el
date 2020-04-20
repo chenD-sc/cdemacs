@@ -1,4 +1,6 @@
 ;;* Unset key
+(lazy-load-unset-keys
+ '("C-z"))
 
 ;;* Global
 (keyboard-translate ?\C-h ?\C-p)                         ; swap
@@ -9,9 +11,9 @@
  '(("p" . sdcv-search-pointer)        ; Word at point, show in buffer
    ("y" . sdcv-search-pointer+)       ; Word as point, show in tooltip
    ("i" . sdcv-search-input)          ; input word, show in buffer
-   (";" . sdcv-search-input+)) 
+   (";" . sdcv-search-input+))
  "init-sdcv"
- "c-z")
+ "C-z")
 
 (provide 'init-key)
 
