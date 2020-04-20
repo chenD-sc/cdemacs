@@ -34,3 +34,6 @@
 [submodule "extensions/paredit"]
 	path = extensions/paredit
 	url = https://github.com/emacsmirror/paredit
+[submodule "extensions/geiser"]
+	path = extensions/geiser
+	url = https://gitlab.com/jaor/geiser
