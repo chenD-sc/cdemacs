@@ -26,11 +26,13 @@
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
     (require 'lazy-load)
-    (require 'init-lispy)
+    (require 'lispy)
     (require 'paredit)
+  
 
     ;; (require 'init-mode)
     (require 'init-paredit)
+    (require 'init-lispy)
     (require 'init-key)
     ;; (require 'init-scheme)
 
