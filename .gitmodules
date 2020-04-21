@@ -37,4 +37,3 @@
 [submodule "extensions/lazy-load"]
 	path = extensions/lazy-load
 	url = https://github.com/manateelazycat/lazy-load
-
