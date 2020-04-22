@@ -6,7 +6,8 @@
       (concat emacs-d "sdcv-dict"))    ;setup directory of stardict dictionary
 
 (setq sdcv-dictionary-simple-list       ;setup dictionary list for simple search
-      '("懒虫简明英汉词典"
+      '(
+        "懒虫简明英汉词典"
         "懒虫简明汉英词典"
         "牛津英汉双解美化版"))
 

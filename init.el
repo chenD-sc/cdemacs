@@ -7,8 +7,8 @@
 
 (defvar emacs-d (file-truename "~/.emacs.d/"))
 (ors-add-subdirs (expand-file-name "extensions/" emacs-d))
-(add-to-list 'load-path (expand-file-name "config/" emacs-d))
 (ors-add-subdirs (expand-file-name "sdcv-dict/" emacs-d))
+(add-to-list 'load-path (expand-file-name "config/" emacs-d))
 
 ;; Font
 (require 'init-font)
@@ -27,14 +27,14 @@
     (load-theme 'eclipse t)
     (require 'lazy-load)
     (require 'lispy)
-    (require 'paredit)
+    ;; (require 'paredit)
   
 
-    ;; (require 'init-mode)
-    (require 'init-paredit)
+    (require 'init-mode)
+    ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
-    (require 'init-scheme)
+    ;; (require 'init-scheme)
 
     ;; 可以延后加载的
     (run-with-idle-timer
