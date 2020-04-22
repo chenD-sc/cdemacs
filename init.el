@@ -29,13 +29,12 @@
     (require 'lispy)
     ;; (require 'paredit)
   
-
+    ;; (require 'init-awesome-tab)
     (require 'init-mode)
     ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
-    ;; (require 'init-scheme)
-
+    
     ;; 可以延后加载的
     (run-with-idle-timer
      1 nil

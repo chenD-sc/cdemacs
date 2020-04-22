@@ -40,3 +40,6 @@
 [submodule "extensions/geiser"]
 	path = extensions/geiser
 	url = https://gitlab.com/jaor/geiser
+[submodule "extensions/awesome-tab"]
+	path = extensions/awesome-tab
+	url = https://github.com/manateelazycat/awesome-tab

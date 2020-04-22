@@ -3,7 +3,7 @@
     (select-frame frame))
   (condition-case nil
       (set-frame-font
-       "DejaVu Sans Mono")
+       "WenQuanYi Micro Hei Mono")
     (error
      (ignore-errors
        (set-frame-font
