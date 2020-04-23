@@ -42,4 +42,7 @@
          ;;(require 'init-yasnippet)
          
          (require 'init-eaf)
+         (require 'init-sdcv)
+
+         (server-start)
          ))))
