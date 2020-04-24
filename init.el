@@ -34,6 +34,7 @@
     ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
+    (require 'init-exwm)
     
     ;; 可以延后加载的
     (run-with-idle-timer
@@ -42,4 +43,7 @@
          ;;(require 'init-yasnippet)
          
          (require 'init-eaf)
+         (require 'init-sdcv)
+
+         (server-start)
          ))))

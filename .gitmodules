@@ -43,3 +43,9 @@
 [submodule "extensions/awesome-tab"]
 	path = extensions/awesome-tab
 	url = https://github.com/manateelazycat/awesome-tab
+[submodule "extensions/exwm"]
+	path = extensions/exwm
+	url = https://github.com/ch11ng/exwm
+[submodule "extensions/xelb"]
+	path = extensions/xelb
+	url = https://github.com/ch11ng/xelb
