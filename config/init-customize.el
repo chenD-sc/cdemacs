@@ -15,6 +15,8 @@
 (csetq text-quoting-style 'grave)
 (csetq line-number-display-limit-width 2000000)
 
+(set-frame-parameter nil 'fullscreen 'fullboth)
+
 ;;* navigation within buffer
 (csetq next-screen-context-lines 5)
 (csetq recenter-positions '(top middle bottom))

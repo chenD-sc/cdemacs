@@ -34,7 +34,7 @@
     ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
-    (require 'init-exwm)
+    ;; (require 'init-exwm)
     
     ;; 可以延后加载的
     (run-with-idle-timer
