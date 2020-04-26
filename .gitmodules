@@ -49,3 +49,6 @@
 [submodule "extensions/xelb"]
 	path = extensions/xelb
 	url = https://github.com/ch11ng/xelb
+[submodule "extensions/auto-save"]
+	path = extensions/auto-save
+	url = https://github.com/manateelazycat/auto-save

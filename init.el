@@ -30,6 +30,8 @@
     ;; (require 'paredit)
   
     ;; (require 'init-awesome-tab)
+    (require 'init-backup)
+    (require 'init-auto-save)
     (require 'init-mode)
     ;; (require 'init-paredit)
     (require 'init-lispy)
