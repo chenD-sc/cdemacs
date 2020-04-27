@@ -52,3 +52,6 @@
 [submodule "extensions/auto-save"]
 	path = extensions/auto-save
 	url = https://github.com/manateelazycat/auto-save
+[submodule "extensions/emacs-rime"]
+	path = extensions/emacs-rime
+	url = https://github.com/DogLooksGood/emacs-rime

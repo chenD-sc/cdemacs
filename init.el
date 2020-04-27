@@ -22,13 +22,13 @@
 
   (with-temp-message ""
     (require 'init-customize)
-    
+
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
     (require 'lazy-load)
     (require 'lispy)
     ;; (require 'paredit)
-  
+
     ;; (require 'init-awesome-tab)
     (require 'init-backup)
     (require 'init-auto-save)
@@ -37,15 +37,18 @@
     (require 'init-lispy)
     (require 'init-key)
     ;; (require 'init-exwm)
-    
+
     ;; 可以延后加载的
     (run-with-idle-timer
      1 nil
      #'(lambda ()
          ;;(require 'init-yasnippet)
-         
+         (require 'init-org)
+
+         ;; (require 'init-rime)
          (require 'init-eaf)
          (require 'init-sdcv)
 
-         (server-start)
-         ))))
+
+         (require 'server)
+         (or (server-running-p) (server-start))))))
