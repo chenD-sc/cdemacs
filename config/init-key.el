@@ -16,17 +16,15 @@
  "C-z")
 
 ;;* Awesome-Tab
-;; (lazy-load-set-keys
-;;  '(
-;;    ("s-j" . awesome-tab-ace-jump)     ;ace jump
-;;    ("M-7" . awesome-tab-backward-tab) ;移动到后一标签
-;;    ("M-9" . awesome-tab-forward-tab)  ;移动到前一标签
-;;    ("M-0" . awesome-tab-backward-group)  ;移动到后一个标签组
-;;    ("<C-tab>" . awesome-tab-forward-tab) ;移动到前一个标签组 
-;;    ("<C-S-iso-lefttab>" . awesome-tab-backward-tab) ;移动到前一个标签
-;;    ))
-(global-set-key (kbd "M-t") 'hydra-tab/body)
+;; (global-set-key (kbd "M-t") 'hydra-tab/body)
+
+;;* EAF
+(lazy-load-global-keys
+ '(
+   ("s-'" . hydra-eaf-menu/body)
+   )
+ "init-eaf")
+
 
 ;;* Provide
 (provide 'init-key)
-

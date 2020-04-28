@@ -1,3 +1,4 @@
+;;* Custom
 (require 'eaf)
 
 ;; Self token, generate at https://github.com/settings/tokens/new?scopes=
@@ -9,21 +10,7 @@
 (setq eaf-proxy-host "127.0.0.1")
 (setq eaf-proxy-port "1080")
 
-(eaf-bind-key undo_action "C-/" eaf-browser-keybinding)
-(eaf-bind-key redo_action "C-?" eaf-browser-keybinding)
-(eaf-bind-key scroll_up "M-j" eaf-browser-keybinding)
-(eaf-bind-key scroll_down "M-k" eaf-browser-keybinding)
-(eaf-bind-key scroll_up_page "M-n" eaf-browser-keybinding)
-(eaf-bind-key scroll_down_page "M-p" eaf-browser-keybinding)
-(eaf-bind-key open_link "M-h" eaf-browser-keybinding)
-(eaf-bind-key open_link_new_buffer "M-H" eaf-browser-keybinding)
-(eaf-bind-key insert_or_open_link_new_buffer "D" eaf-browser-keybinding)
-(eaf-bind-key insert_or_open_link_background_buffer "F" eaf-browser-keybinding)
-(eaf-bind-key watch-other-window-up-line "M-<" eaf-browser-keybinding)
-(eaf-bind-key watch-other-window-down-line "M->" eaf-browser-keybinding)
-(eaf-bind-key emacs-session-save "<f5>" eaf-browser-keybinding)
-(eaf-bind-key refresh_page "M-r" eaf-browser-keybinding)
-
+(setq eaf-browser-default-search-engine 'startpage)
 (eaf-setq eaf-browser-default-zoom "1.00")
 (eaf-setq eaf-browse-blank-page-url "https://startpage.com")
 (eaf-setq eaf-browser-aria2-proxy-host "127.0.0.1")
@@ -40,4 +27,58 @@
   (interactive)
   (eaf-open-browser "http://127.0.0.1:4000"))
 
+;;* Key
+(eaf-bind-key undo_action "C-/" eaf-browser-keybinding)
+(eaf-bind-key redo_action "C-?" eaf-browser-keybinding)
+(eaf-bind-key scroll_up "M-j" eaf-browser-keybinding)
+(eaf-bind-key scroll_down "M-k" eaf-browser-keybinding)
+(eaf-bind-key scroll_up_page "M-n" eaf-browser-keybinding)
+(eaf-bind-key scroll_down_page "M-p" eaf-browser-keybinding)
+(eaf-bind-key open_link "M-h" eaf-browser-keybinding)
+(eaf-bind-key open_link_new_buffer "M-H" eaf-browser-keybinding)
+(eaf-bind-key insert_or_open_link_new_buffer "D" eaf-browser-keybinding)
+(eaf-bind-key insert_or_open_link_background_buffer "F" eaf-browser-keybinding)
+(eaf-bind-key watch-other-window-up-line "M-<" eaf-browser-keybinding)
+(eaf-bind-key watch-other-window-down-line "M->" eaf-browser-keybinding)
+(eaf-bind-key emacs-session-save "<f5>" eaf-browser-keybinding)
+(eaf-bind-key refresh_page "M-r" eaf-browser-keybinding)
+
+(defhydra hydra-eaf-menu (:color pink
+                                 :hint nil)
+  "
+^App^                ^File^         ^qrcode^      ^Other
+^^^^^^^^-----------------------------------------------------
+_b_: browser         _f_: open      _s_: qrcode   _d_: demo
+_B_: browser history _O_: office    _S_: dired
+_t_: terminal        _M_: mindmap-c _i_: browser
+_h_: mail            _m_: mindmap-o _a_: airshare
+_r_: rss
+_p_: camera
+"
+  ("b" eaf-open-browser)              ;Search or Goto URL
+  ("B" eaf-open-browser-with-history) ;Search or Goto URL or Goto History
+  ("p" eaf-open-camera)
+  ("m" eaf-open-mail-as-html)       ;HTML MAIL: in gnus, mu4e, notmuch
+  ("f" eaf-open) ;File: PDF, Video, Image, Markdown, Org, Mermaid(*.mmd)
+  ("t" eaf-open-terminal)
+  ("s" eaf-file-sender-qrcode)
+  ("S" eaf-file-sender-qrcode-in-dired)
+  ("i" eaf-file-browser-qrcode)
+  ("a" eaf-open-airshare)
+  ("r" eaf-open-rss-reader)
+  ("M" eaf-create-mindmap)
+  ("m" eaf-open-mindmap)
+  ("O" eaf-open-office)
+  ("d" eaf-open-demo)                    ;Verify basic functionality
+  )
+
+(defhydra hydra-eaf-test (:color pink
+                                 :hint nil)
+  "
+test
+"
+  ("b" eaf-open-browser)
+  )
+
+;;* Provide
 (provide 'init-eaf)
