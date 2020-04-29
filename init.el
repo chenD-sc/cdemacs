@@ -28,6 +28,7 @@
     (require 'lazy-load)
     (require 'lispy)
     ;; (require 'paredit)
+    (require 'highlight-parentheses)
 
     ;; (require 'init-awesome-tab)
     (require 'init-backup)
@@ -45,7 +46,7 @@
          ;;(require 'init-yasnippet)
          (require 'init-org)
 
-         ;; (require 'init-rime)
+         (require 'init-rime)
          (require 'init-eaf)
          (require 'init-sdcv)
 

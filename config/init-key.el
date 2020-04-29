@@ -25,6 +25,13 @@
    )
  "init-eaf")
 
+;;* Magit
+(lazy-load-global-keys
+ '(
+   ("s-m" . toggle-input-method)
+   )
+ "init-rime")
+
 
 ;;* Provide
 (provide 'init-key)

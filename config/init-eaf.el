@@ -10,7 +10,6 @@
 (setq eaf-proxy-host "127.0.0.1")
 (setq eaf-proxy-port "1080")
 
-(setq eaf-browser-default-search-engine 'startpage)
 (eaf-setq eaf-browser-default-zoom "1.00")
 (eaf-setq eaf-browse-blank-page-url "https://startpage.com")
 (eaf-setq eaf-browser-aria2-proxy-host "127.0.0.1")
@@ -44,14 +43,15 @@
 (eaf-bind-key refresh_page "M-r" eaf-browser-keybinding)
 
 (defhydra hydra-eaf-menu (:color pink
-                                 :hint nil)
+                                 :hint nil
+                                 :exit t)
   "
-^App^                ^File^         ^qrcode^      ^Other
+^App^                ^File^         ^Qrcode^      ^Other
 ^^^^^^^^-----------------------------------------------------
-_b_: browser         _f_: open      _s_: qrcode   _d_: demo
+_b_: browser         _o_: open      _s_: qrcode   _d_: demo
 _B_: browser history _O_: office    _S_: dired
-_t_: terminal        _M_: mindmap-c _i_: browser
-_h_: mail            _m_: mindmap-o _a_: airshare
+_t_: terminal        _C_: mindmap-c _i_: browser
+_m_: mail            _c_: mindmap-o _a_: airshare
 _r_: rss
 _p_: camera
 "
@@ -59,25 +59,19 @@ _p_: camera
   ("B" eaf-open-browser-with-history) ;Search or Goto URL or Goto History
   ("p" eaf-open-camera)
   ("m" eaf-open-mail-as-html)       ;HTML MAIL: in gnus, mu4e, notmuch
-  ("f" eaf-open) ;File: PDF, Video, Image, Markdown, Org, Mermaid(*.mmd)
+  ("o" eaf-open) ;File: PDF, Video, Image, Markdown, Org, Mermaid(*.mmd)
   ("t" eaf-open-terminal)
   ("s" eaf-file-sender-qrcode)
   ("S" eaf-file-sender-qrcode-in-dired)
   ("i" eaf-file-browser-qrcode)
   ("a" eaf-open-airshare)
   ("r" eaf-open-rss-reader)
-  ("M" eaf-create-mindmap)
-  ("m" eaf-open-mindmap)
+  ("C" eaf-create-mindmap)
+  ("c" eaf-open-mindmap)
   ("O" eaf-open-office)
-  ("d" eaf-open-demo)                    ;Verify basic functionality
-  )
+  ("d" eaf-open-demo)                   ;Verify basic functionality
 
-(defhydra hydra-eaf-test (:color pink
-                                 :hint nil)
-  "
-test
-"
-  ("b" eaf-open-browser)
+  ("q" nil "quit")
   )
 
 ;;* Provide
