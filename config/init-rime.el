@@ -4,14 +4,14 @@
 ;;* Code
 (setq rime-user-data-dir "~/.config/ibus/rime")
 
-(setq rime-posframe-properties
-      (list :background-color "#333333"
-            :foreground-color "#dcdccc"
-            :font "WenQuanYi Micro Hei Mono-14"
-            :internal-border-width 10))
+;; (setq rime-posframe-properties
+;;       (list :background-color "#333333"
+;;             :foreground-color "#dcdccc"
+;;             :font "WenQuanYi Micro Hei Mono-14"
+;;             :internal-border-width 10))
 
-(setq default-input-method "rime"
-      rime-show-candidate 'posframe)
+;; (setq default-input-method "rime"
+;;       rime-show-candidate 'posframe)
 
 (lazy-load-set-keys
  '(
@@ -22,5 +22,3 @@
 
 ;;* Provide
 (provide 'init-rime)
-
-

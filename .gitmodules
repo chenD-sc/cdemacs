@@ -55,3 +55,6 @@
 [submodule "extensions/emacs-rime"]
 	path = extensions/emacs-rime
 	url = https://github.com/DogLooksGood/emacs-rime
+[submodule "extensions/dash"]
+	path = extensions/dash
+	url = https://github.com/magnars/dash.el
