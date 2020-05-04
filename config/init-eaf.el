@@ -8,7 +8,7 @@
 ;; Need configuration own local proxy program first.
 (setq eaf-proxy-type "socks5")
 (setq eaf-proxy-host "127.0.0.1")
-(setq eaf-proxy-port "1080")
+(setq eaf-proxy-port "1090")
 
 (eaf-setq eaf-browser-default-zoom "1.00")
 (eaf-setq eaf-browse-blank-page-url "https://startpage.com")
