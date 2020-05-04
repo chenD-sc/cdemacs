@@ -1,7 +1,0 @@
-(dolist (hook (list
-               'scheme-mode-hook
-               'c-mode-hook
-               'c++-mode-hook
-               'lisp-interaction-mode-hook
-               'lisp-mode-hook
-               )))

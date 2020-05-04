@@ -4,7 +4,7 @@
 (require 'exwm-xim)
 
 ;;* Workspace
-(setq exwm-workspace-number 2)
+(setq exwm-workspace-number 4)
 
 ;;* Global key bindings
 (setq exwm-input-global-keys
@@ -29,7 +29,7 @@
                     (interactive)
                     (start-process "" nil "/usr/bin/slock")))))
 
-;;* 
+;;*
 ;; To add a key binding only available in line-mode, simply define it in `exwm-mode-map'.
 ;; shortens 'C-c q' to 'C-q'
 (define-key exwm-mode-map [?\C-q] #'exwm-input-send-next-key)
@@ -98,10 +98,7 @@
 ;; (exwm-randr-enable)
 
 ;;* Input method
-(exwm-xim-enable)
-(push ?\C-\\ exwm-input-prefix-keys)
-
-(exwm-enable)
+;; (exwm-xim-enable)
+;; (push ?\C-\\ exwm-input-prefix-keys)
 
 (provide 'init-exwm)
-

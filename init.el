@@ -37,6 +37,10 @@
     ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
+<<<<<<< HEAD
+=======
+    ;; (require 'init-exwm)
+>>>>>>> 8a88310822732ea3a8eff12f8a037b6e98ae2ddc
 
     ;; 可以延后加载的
     (run-with-idle-timer
