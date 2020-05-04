@@ -37,12 +37,13 @@
     ;; (require 'init-paredit)
     (require 'init-lispy)
     (require 'init-key)
-    
+
     ;; 可以延后加载的
     (run-with-idle-timer
      1 nil
      #'(lambda ()
          ;;(require 'init-yasnippet)
+         (require 'init-company-mode)
          (require 'init-org)
 
          (require 'init-rime)

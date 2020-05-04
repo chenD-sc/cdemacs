@@ -52,3 +52,6 @@
 [submodule "extensions/dash"]
 	path = extensions/dash
 	url = https://github.com/magnars/dash.el
+[submodule "extensions/company-mode"]
+	path = extensions/company-mode
+	url = https://github.com/company-mode/company-mode
