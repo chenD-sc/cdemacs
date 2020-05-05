@@ -30,7 +30,7 @@
     ;; (require 'paredit)
     (require 'highlight-parentheses)
 
-    ;; (require 'init-awesome-tab)
+    (require 'init-awesome-tab)
     (require 'init-backup)
     (require 'init-auto-save)
     (require 'init-mode)

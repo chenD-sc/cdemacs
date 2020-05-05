@@ -15,8 +15,12 @@
  "init-sdcv"
  "C-z")
 
-;;* Awesome-Tab
-;; (global-set-key (kbd "M-t") 'hydra-tab/body)
+;;* Fast switch
+(lazy-load-global-keys
+ '(
+   ("<C-tab>" . hydra-fast-switch/body)
+   )
+ "init-awesome-tab")
 
 ;;* EAF
 (lazy-load-global-keys
@@ -32,43 +36,14 @@
    )
  "init-rime")
 
-;;* Hydras
-;;** table
-(defhydra hydra-window (:color red
-                               :columns nil)
-  "window"
-  ("h" windmove-left nil)
-  ("j" windmove-down nil)
-  ("k" windmove-up nil)
-  ("l" windmove-right nil)
-  ("H" hydra-move-splitter-left nil)
-  ("J" hydra-move-splitter-down nil)
-  ("K" hydra-move-splitter-up nil)
-  ("L" hydra-move-splitter-right nil)
-  ("v" (lambda ()
-         (interactive)
-         (split-window-right)
-         (windmove-right))
-   "vert")
-  ("x" (lambda ()
-         (interactive)
-         (split-window-below)
-         (windmove-down))
-   "horz")
-  ("t" transpose-frame "'" :exit t)
-  ("o" delete-other-windows "one" :exit t)
-  ("a" ace-window "ace")
-  ("s" ace-swap-window "swap")
-  ("d" ace-delete-window "del")
-  ("i" ace-maximize-window "ace-one" :exit t)
-  ("b" ido-switch-buffer "buf")
-  ("m" headlong-bookmark-jump "bmk")
-  ("q" nil "cancel")
-  ("u" (progn (winner-undo) (setq this-command 'winner-undo)) "undo")
-  ("f" nil))
+;;* Window Operation
+(lazy-load-global-keys
+ '(
+   ("s-;" . hydra-window-navigation/body)
+   )
+ "init-window"
+ )
 
-;;** Binding
-(global-set-key (kbd "C-M-o") 'hydra-window/body)
 
 ;;* Provide
 (provide 'init-key)

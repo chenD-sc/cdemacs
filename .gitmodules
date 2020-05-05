@@ -55,3 +55,6 @@
 [submodule "extensions/company-mode"]
 	path = extensions/company-mode
 	url = https://github.com/company-mode/company-mode
+[submodule "extensions/ace-window"]
+	path = extensions/ace-window
+	url = https://github.com/abo-abo/ace-window
