@@ -45,7 +45,7 @@
      1 nil
      #'(lambda ()
          ;;(require 'init-yasnippet)
-         ;; (require 'init-company-mode)
+         (require 'init-company-mode)
          (require 'init-org)
 
          (require 'init-rime)

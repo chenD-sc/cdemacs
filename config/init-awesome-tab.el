@@ -30,8 +30,8 @@ WIN-ID: Window index."
   "
   ^^^^Fast Move             ^^^^Tab                    ^^Search     ^^Misc
  -^^^^--------------------+-^^^^---------------------+-^^---------+-^^----------------------
-   ^_k_^    prev group    | _a_^^       select first | _b_ buffer | _d_ kill buffer
- _h_   _l_  switch tab    | _e_^^       select last  | _g_ group  | _D_ kill others in group
+   ^_k_^    prev group    | _a_^^       select first | _b_ buffer | _x_ kill buffer
+ _h_   _l_  switch tab    | _e_^^       select last  | _g_ group  | _X_ kill others in group
    ^_j_^    next group    | _C-j_^^     ace jump     | ^^         | ^^
  ^^0 ~ 9^^  select window | _C-h_/_C-l_ move current | ^^         | ^^
  -^^^^--------------------+-^^^^---------------------+-^^---------+-^^----------------------
@@ -61,8 +61,8 @@ WIN-ID: Window index."
   ("b" ivy-switch-buffer)
   ("g" awesome-tab-counsel-switch-group)
   ;; misc
-  ("d" kill-current-buffer)
-  ("D" awesome-tab-kill-all-buffers-in-current-group)
+  ("x" kill-current-buffer)
+  ("X" awesome-tab-kill-all-buffers-in-current-group)
 
   ("q" nil "quit"))
 

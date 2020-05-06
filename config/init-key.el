@@ -1,6 +1,6 @@
 ;;* Unset key
 (lazy-load-unset-keys
- '("C-z"))
+ '("C-z" "s-x"))
 
 ;;* Global swap key, (C-h, C-p)
 (keyboard-translate ?\C-h ?\C-p)                         ; swap
@@ -44,6 +44,14 @@
  "init-window"
  )
 
+;;* Aweshell
+(lazy-load-global-keys
+ '(
+   ("s-n" . aweshell-new)
+   ("s-h" . aweshell-toggle)
+   ("s-x s-x" . aweshell-dedicated-toggle)
+   )
+ "aweshell")
 
 ;;* Provide
 (provide 'init-key)
