@@ -1,10 +1,13 @@
+;;* Global swap key, (C-h, C-p)
+(keyboard-translate ?\C-h ?\C-p)                         ; swap
+(keyboard-translate ?\C-p ?\C-h)                         ; swap
+
 ;;* Unset key
 (lazy-load-unset-keys
  '("C-z" "s-x"))
 
-;;* Global swap key, (C-h, C-p)
-(keyboard-translate ?\C-h ?\C-p)                         ; swap
-(keyboard-translate ?\C-p ?\C-h)                         ; swap
+;;* Global set
+(global-set-key "\C-u" 'undo)
 
 ;;* Sdcv
 (lazy-load-global-keys                ; global key unset
@@ -14,6 +17,26 @@
    (";" . sdcv-search-input+))
  "init-sdcv"
  "C-z")
+
+;;* Delete block
+;; 快速删除光标左右的内容
+;; (lazy-load-global-keys
+;;  '(
+;;    ("M-N" . delete-block-backward)
+;;    ("M-M" . delete-block-forward))
+;;  "delete-block")
+
+;;* Buffer
+;;** Buffer Move
+;; 缓存移动
+
+;;** Buffer Edit
+;; 缓存编辑
+;; (lazy-load-global-keys
+;;  '(
+;;    ("C-u" . undo-tree-undo)             ;撤销
+;;    )
+;;  "undo-tree")
 
 ;;* Fast switch
 (lazy-load-global-keys
@@ -32,7 +55,7 @@
 ;;* Magit
 (lazy-load-global-keys
  '(
-   ("s-m" . toggle-input-method)
+   ("C-/" . toggle-input-method)
    )
  "init-rime")
 

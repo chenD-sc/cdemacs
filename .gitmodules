@@ -61,3 +61,9 @@
 [submodule "extensions/aweshell"]
 	path = extensions/aweshell
 	url = https://github.com/manateelazycat/aweshell
+[submodule "extensions/worf"]
+	path = extensions/worf
+	url = https://github.com/abo-abo/worf
+[submodule "extensions/ace-link"]
+	path = extensions/ace-link
+	url = https://github.com/abo-abo/ace-link

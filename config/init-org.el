@@ -1,70 +1,27 @@
-;;* Code
+;;* Require
+(require 'worf)
+(require 'org-agenda)
+
+;;* Config
 (with-eval-after-load 'org
   (setq org-startup-folded nil)         ;默认展开内容
   (setq org-startup-indented t)         ;默认缩进内容
   )
 
-(dolist (hook (list
-                 'org-mode-hook
-                 ))
-  (add-hook hook '(lambda ()
-                    (worf-mode)
-                    (setq fill-column 90)
-                    (auto-fill-mode)
-                    (require 'org-table-auto-align)
-                    (org-table-auto-align-mode)
-
-                    (setq truncate-lines nil) ;自动折行
-                    )))
 ;;*
 (add-to-list 'org-file-apps '("\\.pdf\\'" . '(lambda (file &optional link)
                                                (eaf-open file))))
 
 ;;* Keys
+;;** org-mode-map
+;; (lazy-load-set-keys
+;;  '(
+;;    ;; nil
+;;    ("C-TAB" . hydra-fast-switch/body)
+;;    )
+;;  org-mode-map)
+
 ;;** org-agenda-mode-map
-(require 'org-agenda)
-
-;; (let ((map org-agenda-mode-map))
-;;   ;; arrows
-;;   (dolist (kb (list
-;;                ;; unbind
-;;                '("a" . 'worf-reserved)
-;;                '("b" . 'worf-reserved)
-;;                '("c" . 'worf-reserved)
-;;                '("d" . 'worf-reserved)
-;;                '("e" . 'worf-reserved)
-;;                '("f" . 'worf-reserved)
-;;                '("n" . 'worf-reserved)
-;;                '("o" . 'org-agenda-show)
-;;                '("u" . 'worf-reserved)
-;;                '("w" . 'worf-reserved)
-;;                '("y" . 'worf-reserved)
-;;                '("z" . 'worf-reserved)
-;;                ;; arrows
-;;                '("j" . 'org-agenda-next-item)
-;;                '("k" . 'org-agenda-previous-item)
-;;                '("h" . 'org-agenda-earlier)
-;;                '("l" . 'org-agenda-later)
-;;                ;; worf
-;;                '("s" . 'worf-schedule)
-;;                '("N" . 'worf-agenda-narrow)
-;;                '("w" . 'worf-agenda-widen)
-;;                '("t" . 'worf-todo)
-;;                ;; misc
-;;                '((kbd "C-j") . 'org-open-at-point)
-;;                '("i" . 'org-agenda-clock-in)
-;;                '("o" . 'org-agenda-clock-out)
-;;                '("0" . 'digit-argument)
-;;                '("1" . 'digit-argument)
-;;                '("v" . 'hydra-org-agenda-view/body)
-;;                '("x" . 'hydra-org-agenda-ex/body)
-;;                '("S" . 'org-save-all-org-buffers)
-;;                '("T" . 'worf-clock-in-and-out)
-;;                ;; disable
-;;                '("f" . nil)
-;;                ))
-;;     (define-key map (car kb) (cdr kb))))
-
 (lazy-load-set-keys
  '(
    ;; unbind
@@ -120,6 +77,19 @@
   ("u" org-agenda-bulk-unmark "unmark")
   ("z" org-agenda-add-note "note"))
 
+;;*
+(dolist (hook (list
+               'org-mode-hook
+               ))
+  (add-hook hook '(lambda ()
+                    (worf-mode)
+                    (setq fill-column 90)
+                    (auto-fill-mode)
+                    (require 'org-table-auto-align)
+                    (org-table-auto-align-mode)
+
+                    (setq truncate-lines nil) ;自动折行
+                    )))
 
 ;;* Provide
 (provide 'init-org)

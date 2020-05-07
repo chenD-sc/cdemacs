@@ -14,9 +14,9 @@
       rime-show-candidate 'minibuffer)
 
 
-(setq rime-disable-predicates
-      '(rime-predicate-after-alphabet-char-p
-        rime-predicate-prog-in-code-p))
+;; (setq rime-disable-predicates
+;;       '(rime-predicate-after-alphabet-char-p
+;;         rime-predicate-prog-in-code-p))
 
 ;;* Key
 (lazy-load-set-keys
@@ -29,4 +29,3 @@
 
 ;;* Provide
 (provide 'init-rime)
-

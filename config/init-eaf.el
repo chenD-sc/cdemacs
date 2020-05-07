@@ -22,9 +22,9 @@
 ;;   (interactive)
 ;;   (eaf-run-command-in-terminal "jekyll serve --livereload" "/home/andy/manateelazycat.github.io"))
 
-(defun jekyll-open-local ()
-  (interactive)
-  (eaf-open-browser "http://127.0.0.1:4000"))
+;; (defun jekyll-open-local ()
+;;   (interactive)
+;;   (eaf-open-browser "http://127.0.0.1:4000"))
 
 ;;* Key
 (eaf-bind-key undo_action "C-/" eaf-browser-keybinding)
