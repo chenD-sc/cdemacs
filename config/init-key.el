@@ -45,6 +45,14 @@
    )
  "init-awesome-tab")
 
+;;* Dired
+(lazy-load-global-keys
+ '(
+   ("<f8>" . dired-jump)
+   ("C-x C-f" . find-file)
+   )
+ "init-dired")
+
 ;;* EAF
 (lazy-load-global-keys
  '(

@@ -14,12 +14,12 @@
 
 ;;* Keys
 ;;** org-mode-map
-;; (lazy-load-set-keys
-;;  '(
-;;    ;; nil
-;;    ("C-TAB" . hydra-fast-switch/body)
-;;    )
-;;  org-mode-map)
+(lazy-load-set-keys
+ '(
+   ;; nil
+   ("<C-tab>" . nil)
+   )
+ org-mode-map)
 
 ;;** org-agenda-mode-map
 (lazy-load-set-keys
