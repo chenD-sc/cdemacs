@@ -8,5 +8,9 @@
                ))
   (add-hook hook '(lambda () (lispy-mode 1))))
 
-(provide 'init-lispy)
+(defun conditionally-enable-lispy ()
+  (when (eq this-command 'eval-expression)
+    (lispy-mode 1)))
+(add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy)
 
+(provide 'init-lispy)

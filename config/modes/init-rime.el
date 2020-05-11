@@ -15,7 +15,7 @@
 
 ;;** Predicates
 (setq rime-disable-predicates
-      '(rime-predicate-auto-english-p   ;
+      '(;; rime-predicate-auto-english-p   ;
         rime-predicate-after-alphabet-char-p
         rime-predicate-prog-in-code-p
         rime-predicate-hydra-p          ;激活一个 ~hydra~ keymap

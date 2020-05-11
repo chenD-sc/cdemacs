@@ -67,3 +67,6 @@
 [submodule "extensions/ace-link"]
 	path = extensions/ace-link
 	url = https://github.com/abo-abo/ace-link
+[submodule "extensions/watch-other-window"]
+	path = extensions/watch-other-window
+	url = https://github.com/manateelazycat/watch-other-window

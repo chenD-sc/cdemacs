@@ -1,14 +1,15 @@
 ;; Base directory and load-path
-(defun ors-add-subdirs (dir)
+(defun cda-add-subdirs (dir)
   "Recursive add directories to `load-path'."
   (let ((default-directory (file-name-as-directory dir)))
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
 
 (defvar emacs-d (file-truename "~/.emacs.d/"))
-(ors-add-subdirs (expand-file-name "extensions/" emacs-d))
-(ors-add-subdirs (expand-file-name "sdcv-dict/" emacs-d))
-(add-to-list 'load-path (expand-file-name "config/" emacs-d))
+(cda-add-subdirs (expand-file-name "extensions/" emacs-d))
+(cda-add-subdirs (expand-file-name "sdcv-dict/" emacs-d))
+(cda-add-subdirs (expand-file-name "config/" emacs-d))
+;; (add-to-list 'load-path (expand-file-name "config/modes/" emacs-d))
 
 ;; Font
 (require 'init-font)
