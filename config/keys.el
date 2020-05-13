@@ -1,6 +1,6 @@
 ;;* keys -*- lexical-binding: t -*-
 ;;* Ctrl shortcuts
-(global-set-key "\C-a" 'ora-move-beginning-of-line) ; 'move-beginning-of-line
+(global-set-key "\C-a" 'cda-move-beginning-of-line) ; 'move-beginning-of-line
 ;; (global-set-key "\C-b" 'backward-char)                ; default
 ;; (global-set-key "\C-c" 'mode-specific-command-prefix) ; default
 ;; (global-set-key "\C-d" 'delete-char)                  ; default
@@ -31,9 +31,46 @@
                                         ; capitili[z]e
 (global-set-key (kbd "C-.") 'comment-dwim)
 
-;; alacritty translations
-
 ;;* Ctrl Meta shortcuts
+
+;;* Hydras
+(require 'hydra-examples)
+(defhydra hydra-window (:color red
+                               :columns nil)
+  "window"
+  ("h" windmove-left nil)
+  ("j" windmove-down nil)
+  ("k" windmove-up nil)
+  ("l" windmove-right nil)
+  ("H" hydra-move-splitter-left nil)
+  ("J" hydra-move-splitter-down nil)
+  ("K" hydra-move-splitter-up nil)
+  ("L" hydra-move-splitter-right nil)
+  ("v" (lambda ()
+         (interactive)
+         (split-window-right)
+         (windmove-right))
+   "vert")
+  ("x" (lambda ()
+         (interactive)
+         (split-window-below)
+         (windmove-down))
+   "horz")
+  ("t" transpose-frame "'" :exit t)
+  ("o" delete-other-windows "one" :exit t)
+  ("a" ace-window "ace")
+  ("s" ace-swap-window "swap")
+  ("d" ace-delete-window "del")
+  ("i" ace-maximize-window "ace-one" :exit t)
+  ("b" ido-switch-buffer "buf")
+  ("m" headlong-bookmark-jump "bmk")
+  ("q" nil "cancel")
+  ("u" (progn (winner-undo) (setq this-command 'winner-undo)) "undo")
+  ("f" nil))
+
+(global-set-key (kbd "C-M-o") 'hydra-window/body)
+
+
 
 ;;* Unset key
 (lazy-load-unset-keys
@@ -47,26 +84,6 @@
    (";" . sdcv-search-input+))
  "init-sdcv"
  "C-z")
-
-;;* Delete block
-;; 快速删除光标左右的内容
-;; (lazy-load-global-keys
-;;  '(
-;;    ("M-N" . delete-block-backward)
-;;    ("M-M" . delete-block-forward))
-;;  "delete-block")
-
-;;* Buffer
-;;** Buffer Move
-;; 缓存移动
-
-;;** Buffer Edit
-;; 缓存编辑
-;; (lazy-load-global-keys
-;;  '(
-;;    ("C-u" . undo-tree-undo)             ;撤销
-;;    )
-;;  "undo-tree")
 
 ;;* Fast switch
 (lazy-load-global-keys
@@ -147,40 +164,6 @@
    ("s-x s-x" . aweshell-dedicated-toggle)
    )
  "aweshell")
-
-;;* Hydras
-(defhydra hydra-window (:color red
-                        :columns nil)
-  "window"
-  ("h" windmove-left nil)
-  ("j" windmove-down nil)
-  ("k" windmove-up nil)
-  ("l" windmove-right nil)
-  ("H" hydra-move-splitter-left nil)
-  ("J" hydra-move-splitter-down nil)
-  ("K" hydra-move-splitter-up nil)
-  ("L" hydra-move-splitter-right nil)
-  ("v" (lambda ()
-         (interactive)
-         (split-window-right)
-         (windmove-right))
-       "vert")
-  ("x" (lambda ()
-         (interactive)
-         (split-window-below)
-         (windmove-down))
-       "horz")
-  ("t" transpose-frame "'" :exit t)
-  ("o" delete-other-windows "one" :exit t)
-  ("a" ace-window "ace")
-  ("s" ace-swap-window "swap")
-  ("d" ace-delete-window "del")
-  ("i" ace-maximize-window "ace-one" :exit t)
-  ("b" ido-switch-buffer "buf")
-  ("m" headlong-bookmark-jump "bmk")
-  ("q" nil "cancel")
-  ("u" (progn (winner-undo) (setq this-command 'winner-undo)) "undo")
-  ("f" nil))
 
 ;;* Provide
 (provide 'keys)

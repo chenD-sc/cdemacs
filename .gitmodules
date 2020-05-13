@@ -70,3 +70,6 @@
 [submodule "extensions/watch-other-window"]
 	path = extensions/watch-other-window
 	url = https://github.com/manateelazycat/watch-other-window
+[submodule "extensions/transpose-frame"]
+	path = extensions/transpose-frame
+	url = https://github.com/emacsorphanage/transpose-frame

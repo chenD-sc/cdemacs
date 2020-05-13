@@ -9,7 +9,6 @@
 (cda-add-subdirs (expand-file-name "extensions/" emacs-d))
 (cda-add-subdirs (expand-file-name "sdcv-dict/" emacs-d))
 (cda-add-subdirs (expand-file-name "config/" emacs-d))
-;; (add-to-list 'load-path (expand-file-name "config/modes/" emacs-d))
 
 ;; Font
 (require 'init-font)
@@ -23,6 +22,8 @@
 
   (with-temp-message ""
     (require 'init-customize)
+
+    (load (concat emacs-d "config/loaddefs.el") nil t)
 
     (require 'eclipse-theme)
     (load-theme 'eclipse t)
