@@ -1,0 +1,78 @@
+[submodule "site-lisp/git/eclipse-theme"]
+	path = site-lisp/git/eclipse-theme
+	url = https://github.com/abo-abo/eclipse-theme
+[submodule "site-lisp/git/use-package"]
+	path = site-lisp/git/use-package
+	url = https://github.com/jwiegley/use-package
+[submodule "site-lisp/git/smex"]
+	path = site-lisp/git/smex
+	url = https://github.com/abo-abo/smex
+[submodule "site-lisp/git/auto-save"]
+	path = site-lisp/git/auto-save
+	url = https://github.com/manateelazycat/auto-save
+[submodule "site-lisp/git/diminish"]
+	path = site-lisp/git/diminish
+	url = https://github.com/myrjola/diminish.el
+[submodule "site-lisp/git/swiper"]
+	path = site-lisp/git/swiper
+	url = https://github.com/abo-abo/swiper
+[submodule "site-lisp/git/hydra"]
+	path = site-lisp/git/hydra
+	url = https://github.com/abo-abo/hydra
+[submodule "site-lisp/git/yasnippet"]
+	path = site-lisp/git/yasnippet
+	url = https://github.com/joaotavora/yasnippet
+[submodule "site-lisp/git/company-mode"]
+	path = site-lisp/git/company-mode
+	url = https://github.com/company-mode/company-mode
+[submodule "site-lisp/git/powerline"]
+	path = site-lisp/git/powerline
+	url = https://github.com/milkypostman/powerline
+[submodule "site-lisp/git/ace-window"]
+	path = site-lisp/git/ace-window
+	url = https://github.com/abo-abo/ace-window
+[submodule "site-lisp/git/avy"]
+	path = site-lisp/git/avy
+	url = https://github.com/abo-abo/avy
+[submodule "site-lisp/git/lispy"]
+	path = site-lisp/git/lispy
+	url = https://github.com/abo-abo/lispy
+[submodule "site-lisp/iedit"]
+	path = site-lisp/iedit
+	url = https://github.com/abo-abo/iedit
+[submodule "site-lisp/git/projectile"]
+	path = site-lisp/git/projectile
+	url = https://github.com/bbatsov/projectile
+[submodule "site-lisp/git/tea-time"]
+	path = site-lisp/git/tea-time
+	url = https://github.com/konzeptual/tea-time
+[submodule "site-lisp/git/ace-link"]
+	path = site-lisp/git/ace-link
+	url = https://github.com/abo-abo/ace-link
+[submodule "site-lisp/git/ace-popup-menu"]
+	path = site-lisp/git/ace-popup-menu
+	url = https://github.com/mrkkrp/ace-popup-menu
+[submodule "site-lisp/git/avy-menu"]
+	path = site-lisp/git/avy-menu
+	url = https://github.com/mrkkrp/avy-menu
+[submodule "site-lisp/git/async"]
+	path = site-lisp/git/async
+	url = https://github.com/jwiegley/emacs-async
+[submodule "site-lisp/git/plain-org-wiki"]
+	path = site-lisp/git/plain-org-wiki
+	url = https://github.com/abo-abo/plain-org-wiki
+[submodule "site-lisp/git/worf"]
+	path = site-lisp/git/worf
+	url = https://github.com/abo-abo/worf
+[submodule "site-lisp/git/org-download"]
+	path = site-lisp/git/org-download
+	url = https://github.com/abo-abo/org-download
+[submodule "site-lisp/git/orca"]
+	path = site-lisp/git/orca
+	url = https://github.com/abo-abo/orca
+[submodule "site-lisp/git/org-bullets"]
+	path = site-lisp/git/org-bullets
+	url = https://github.com/sabof/org-bullets
+[submodule "site-lisp/git/zoutline"]
+	path = site-lisp/git/zoutline
+	url = https://github.com/abo-abo/zoutline
