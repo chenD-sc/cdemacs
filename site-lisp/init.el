@@ -64,6 +64,9 @@
 (csetq initial-scratch-message "")
 (csetq text-quoting-style 'grave)
 (csetq line-number-display-limit-width 2000000)
+;; full screen
+(set-frame-parameter nil 'fullscreen 'fullboth)
+
 ;;** navigation within buffer
 (csetq next-screen-context-lines 5)
 (csetq recenter-positions '(top middle bottom))
@@ -109,10 +112,10 @@
 (csetq smtpmail-auth-credendials (expand-file-name "~/.authinfo"))
 (csetq smtpmail-smtp-server "smtp.gmail.com")
 (csetq smtpmail-smtp-service 587)
-;;** Rest
-(csetq browse-url-browser-function 'browse-url-firefox)
-(csetq browse-url-firefox-program "firefox")
-;;*** auto save
+;;** browser
+(csetq browse-url-browser-function 'eaf-open-browser)
+(defalias 'browse-web #'eaf-open-browser)
+;;** auto save
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (use-package auto-save

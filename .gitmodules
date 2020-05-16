@@ -37,9 +37,6 @@
 [submodule "site-lisp/git/lispy"]
 	path = site-lisp/git/lispy
 	url = https://github.com/abo-abo/lispy
-[submodule "site-lisp/iedit"]
-	path = site-lisp/iedit
-	url = https://github.com/abo-abo/iedit
 [submodule "site-lisp/git/projectile"]
 	path = site-lisp/git/projectile
 	url = https://github.com/bbatsov/projectile
@@ -76,3 +73,15 @@
 [submodule "site-lisp/git/zoutline"]
 	path = site-lisp/git/zoutline
 	url = https://github.com/abo-abo/zoutline
+[submodule "site-lisp/git/org-parser"]
+	path = site-lisp/git/org-parser
+	url = https://github.com/emacsmirror/org-parser
+[submodule "site-lisp/git/dash"]
+	path = site-lisp/git/dash
+	url = https://github.com/magnars/dash.el
+[submodule "site-lisp/git/ht"]
+	path = site-lisp/git/ht
+	url = https://github.com/Wilfred/ht.el
+[submodule "site-lisp/git/iedit"]
+	path = site-lisp/git/iedit
+	url = https://github.com/abo-abo/iedit

@@ -46,7 +46,7 @@
                                  :hint nil
                                  :exit t)
   "
-^App^                ^File^         ^Qrcode^      ^Other
+^App^                ^File^         ^Qrcode^      ^Misc
 ^^^^^^^^-----------------------------------------------------
 _b_: browser         _o_: open      _s_: qrcode   _d_: demo
 _B_: browser history _O_: office    _S_: dired
