@@ -386,4 +386,29 @@ _v_ariable     valu_e_"
           t))
         "\n")))))
 
+;;* Lazy load
+(require 'lazy-load)
+;;** SDCV
+(lazy-load-global-keys                ; global key unset
+ '(("p" . sdcv-search-pointer)        ; word at point, show in buffer
+   ("y" . sdcv-search-pointer+)       ; word as point, show in tooltip
+   ("i" . sdcv-search-input)          ; input word, show in buffer
+   (";" . sdcv-search-input+))
+ "cda-sdcv"
+ "s-t")
+
+;;** EAF
+(lazy-load-global-keys
+ '(
+   ("s-'" . hydra-eaf-menu/body)
+   )
+ "cda-eaf")
+
+;;** Rime
+(lazy-load-global-keys
+ '(
+   ("s-m" . toggle-input-method)
+   )
+ "cda-rime")
+
 (provide 'keys)
