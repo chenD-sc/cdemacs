@@ -2,13 +2,23 @@
 ;;* Base directory and load-path
 (defvar emacs-d (file-truename "~/.emacs.d/site-lisp/"))
 (setq cda-startup-time-tic (current-time))
-(defun cda-add-subdirs (dir)
-  "Recursive add directories to `load-path'."
-  (let ((default-directory (file-name-as-directory dir)))
-    (add-to-list 'load-path dir)
-    (normal-top-level-add-subdirs-to-load-path)))
-(cda-add-subdirs emacs-d)
+;; (defun cda-add-subdirs (dir)
+;;   "Recursive add directories to `load-path'."
+;;   (let ((default-directory (file-name-as-directory dir)))
+;;     (add-to-list 'load-path dir)
+;;     (normal-top-level-add-subdirs-to-load-path)))
+;; (cda-add-subdirs emacs-d)
+(let ((emacs-git (expand-file-name "git/" emacs-d)))
+  (mapc (lambda (x)
+          (add-to-list 'load-path (expand-file-name x emacs-git)))
+        (delete "." (delete ".." (directory-files emacs-git)))))
+(add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
+(add-to-list 'load-path emacs-d)
+(add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (setq enable-local-variables :all)
+
+;;* Package
+;; (package-initialize)
 
 ;;* Font
 (defun cda-set-font (&optional frame)
@@ -108,10 +118,10 @@
 (csetq display-time-default-load-average nil)
 (csetq display-time-format "")
 ;;** email
-(csetq send-mail-function 'smtpmail-send-it)
-(csetq smtpmail-auth-credendials (expand-file-name "~/.authinfo"))
-(csetq smtpmail-smtp-server "smtp.gmail.com")
-(csetq smtpmail-smtp-service 587)
+;; (csetq send-mail-function 'smtpmail-send-it)
+;; (csetq smtpmail-auth-credendials (expand-file-name "~/.authinfo"))
+;; (csetq smtpmail-smtp-server "smtp.gmail.com")
+;; (csetq smtpmail-smtp-service 587)
 ;;** browser
 (csetq browse-url-browser-function 'eaf-open-browser)
 (defalias 'browse-web #'eaf-open-browser)
@@ -119,9 +129,10 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (use-package auto-save
-             :init
-             (setq auto-save-silent t)
-             (setq auto-save-delete-trailing-whitespace t))
+  :config
+  (auto-save-enable)
+  (setq auto-save-silent t)
+  (setq auto-save-delete-trailing-whitespace t))
 
 ;;* Modes
 ;;** global minor modes
@@ -220,6 +231,8 @@
 (use-package centimacro
   :commands centi-assign)
 (require 'keys)
+;;** Input method
+(require 'cda-rime)
 ;;** appearance
 (when (image-type-available-p 'xpm)
   (use-package powerline
@@ -263,27 +276,25 @@
 (use-package helm-make
   :commands (helm-make helm-make-projectile)
   :config (setq helm-make-completion-method 'ivy))
-(setq abbrev-file-name
-      (concat emacs-d "personal/abbrev_defs"))
 (use-package flyspell
   :commands flyspell-mode
   :config (require 'cda-flyspell))
-(use-package projectile
-  :diminish projectile-mode
-  :init
-  (setq projectile-mode-line nil)
-  (projectile-global-mode)
-  (setq projectile-project-root-files-bottom-up
-        '(".git" ".projectile"))
-  (setq projectile-completion-system 'ivy)
-  (setq projectile-indexing-method 'alien)
-  (setq projectile-enable-caching nil)
-  (setq projectile-verbose nil)
-  (setq projectile-do-log nil)
-  (setq projectile-switch-project-action
-        (lambda ()
-          (dired (projectile-project-root))))
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+;; (use-package projectile
+;;   :diminish projectile-mode
+;;   :init
+;;   (setq projectile-mode-line nil)
+;;   (projectile-global-mode)
+;;   (setq projectile-project-root-files-bottom-up
+;;         '(".git" ".projectile"))
+;;   (setq projectile-completion-system 'ivy)
+;;   (setq projectile-indexing-method 'alien)
+;;   (setq projectile-enable-caching nil)
+;;   (setq projectile-verbose nil)
+;;   (setq projectile-do-log nil)
+;;   (setq projectile-switch-project-action
+;;         (lambda ()
+;;           (dired (projectile-project-root))))
+;;   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 (use-package find-file-in-project
   :commands find-file-in-project)
 (use-package magit
@@ -321,7 +332,6 @@
 (use-package htmlize
   :commands htmlize-buffer)
 (lispy-mode)
-(require 'personal-init nil t)
 (unless (bound-and-true-p cda-barebones)
   (run-with-idle-timer
    3 nil

@@ -188,6 +188,12 @@
 ;;* Misc shortcuts
 (define-key universal-argument-map "ψ" 'universal-argument-more)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(global-set-key (kbd "C-S-p") 'counsel-rhythmbox-playpause-current-song)
+
+;; self temp
+(global-set-key (kbd "s-/") 'toggle-input-method)
+
+
 ;;* Hydras
 (require 'hydra-examples)
 (defhydra hydra-error (global-map "M-g")
@@ -399,16 +405,10 @@ _v_ariable     valu_e_"
 
 ;;** EAF
 (lazy-load-global-keys
- '(
-   ("s-'" . hydra-eaf-menu/body)
-   )
+ (
+  ("s-'" . hydra-eaf-menu/body)
+  )
  "cda-eaf")
 
-;;** Rime
-(lazy-load-global-keys
- '(
-   ("s-m" . toggle-input-method)
-   )
- "cda-rime")
 
 (provide 'keys)

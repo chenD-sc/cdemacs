@@ -94,3 +94,42 @@
 [submodule "site-lisp/git/sdcv"]
 	path = site-lisp/git/sdcv
 	url = https://github.com/manateelazycat/sdcv
+[submodule "site-lisp/git/emacs-rime"]
+	path = site-lisp/git/emacs-rime
+	url = https://github.com/DogLooksGood/emacs-rime
+[submodule "site-lisp/git/define-word"]
+	path = site-lisp/git/define-word
+	url = https://github.com/abo-abo/define-word
+[submodule "site-lisp/git/slime"]
+	path = site-lisp/git/slime
+	url = https://github.com/slime/slime
+[submodule "site-lisp/git/company-jedi"]
+	path = site-lisp/git/company-jedi
+	url = https://github.com/emacsorphanage/company-jedi
+[submodule "site-lisp/git/jedi"]
+	path = site-lisp/git/jedi
+	url = https://github.com/tkf/emacs-jedi
+[submodule "site-lisp/git/emacs-python-environment"]
+	path = site-lisp/git/emacs-python-environment
+	url = https://github.com/tkf/emacs-python-environment
+[submodule "site-lisp/git/deferred"]
+	path = site-lisp/git/deferred
+	url = https://github.com/kiwanami/emacs-deferred
+[submodule "site-lisp/git/lpy"]
+	path = site-lisp/git/lpy
+	url = https://github.com/abo-abo/lpy
+[submodule "site-lisp/git/epc"]
+	path = site-lisp/git/epc
+	url = https://github.com/kiwanami/emacs-epc
+[submodule "site-lisp/git/posframe"]
+	path = site-lisp/git/posframe
+	url = https://github.com/tumashu/posframe
+[submodule "site-lisp/git/emacs-ctable"]
+	path = site-lisp/git/emacs-ctable
+	url = https://github.com/kiwanami/emacs-ctable
+[submodule "site-lisp/git/auto-complete"]
+	path = site-lisp/git/auto-complete
+	url = https://github.com/auto-complete/auto-complete
+[submodule "site-lisp/git/popup-el"]
+	path = site-lisp/git/popup-el
+	url = https://github.com/auto-complete/popup-el
