@@ -46,6 +46,19 @@
 
 ;;;***
 
+;;;### (autoloads nil "modes/cda-eshell" "modes/cda-eshell.el" (0
+;;;;;;  0 0 0))
+;;; Generated autoloads from modes/cda-eshell.el
+
+(autoload 'cda-eshell-hook "modes/cda-eshell" nil nil nil)
+
+(autoload 'eshell-this-dir "modes/cda-eshell" "\
+Open or move eshell in `default-directory'." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-eshell" '("eshell-completion-at-point")))
+
+;;;***
+
 ;;;### (autoloads nil "modes/cda-flyspell" "modes/cda-flyspell.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modes/cda-flyspell.el
@@ -65,6 +78,16 @@ But don't look beyond what's visible on the screen." t nil)
 
 ;;;***
 
+;;;### (autoloads nil "modes/cda-latex" "modes/cda-latex.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from modes/cda-latex.el
+
+(autoload 'cda-latex-hook "modes/cda-latex" nil nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-latex" '("cda-" "font-lock-simple-face")))
+
+;;;***
+
 ;;;### (autoloads nil "modes/cda-org" "modes/cda-org.el" (0 0 0 0))
 ;;; Generated autoloads from modes/cda-org.el
 
@@ -72,7 +95,7 @@ But don't look beyond what's visible on the screen." t nil)
 
 (autoload 'cda-org-agenda-hook "modes/cda-org" nil nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-org" '("cda-" "hot-expand" "hydra-org-" "org-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-org" '("cda-" "eaf-org-open-file" "hot-expand" "hydra-org-" "org-")))
 
 ;;;***
 
@@ -119,6 +142,16 @@ But don't look beyond what's visible on the screen." t nil)
 (autoload 'cda-scheme-hook "modes/cda-scheme" nil nil nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-scheme" '("scheme-completion-at-point")))
+
+;;;***
+
+;;;### (autoloads nil "modes/cda-shell" "modes/cda-shell.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from modes/cda-shell.el
+
+(autoload 'cda-shell-hook "modes/cda-shell" nil nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-shell" '("cda-a")))
 
 ;;;***
 

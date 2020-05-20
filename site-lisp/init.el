@@ -2,19 +2,19 @@
 ;;* Base directory and load-path
 (defvar emacs-d (file-truename "~/.emacs.d/site-lisp/"))
 (setq cda-startup-time-tic (current-time))
-;; (defun cda-add-subdirs (dir)
-;;   "Recursive add directories to `load-path'."
-;;   (let ((default-directory (file-name-as-directory dir)))
-;;     (add-to-list 'load-path dir)
-;;     (normal-top-level-add-subdirs-to-load-path)))
-;; (cda-add-subdirs emacs-d)
-(let ((emacs-git (expand-file-name "git/" emacs-d)))
-  (mapc (lambda (x)
-          (add-to-list 'load-path (expand-file-name x emacs-git)))
-        (delete "." (delete ".." (directory-files emacs-git)))))
-(add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
-(add-to-list 'load-path emacs-d)
-(add-to-list 'load-path (expand-file-name "modes/" emacs-d))
+(defun cda-add-subdirs (dir)
+  "Recursive add directories to `load-path'."
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list 'load-path dir)
+    (normal-top-level-add-subdirs-to-load-path)))
+(cda-add-subdirs emacs-d)
+;; (let ((emacs-git (expand-file-name "git/" emacs-d)))
+;;   (mapc (lambda (x)
+;;           (add-to-list 'load-path (expand-file-name x emacs-git)))
+;;         (delete "." (delete ".." (directory-files emacs-git)))))
+;; (add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
+;; (add-to-list 'load-path emacs-d)
+;; (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (setq enable-local-variables :all)
 
 ;;* Font
@@ -281,7 +281,6 @@
   :diminish projectile-mode
   :init
   (setq projectile-mode-line nil)
-  ;; (projectile-global-mode)
   (setq projectile-project-root-files-bottom-up
         '(".git" ".projectile"))
   (setq projectile-completion-system 'ivy)
@@ -292,8 +291,9 @@
   (setq projectile-switch-project-action
         (lambda ()
           (dired (projectile-project-root))))
-  ;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  )
+  :config
+  (projectile-global-mode)
+  (projectile-global-mode))
 (use-package find-file-in-project
   :commands find-file-in-project)
 (use-package magit

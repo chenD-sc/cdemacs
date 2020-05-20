@@ -136,3 +136,6 @@
 [submodule "site-lisp/git/watch-other-window"]
 	path = site-lisp/git/watch-other-window
 	url = https://www.github.com/manateelazycat/watch-other-window
+[submodule "site-lisp/git/emacs-bash-completion"]
+	path = site-lisp/git/emacs-bash-completion
+	url = https://github.com/szermatt/emacs-bash-completion

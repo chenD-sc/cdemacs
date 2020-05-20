@@ -15,6 +15,7 @@
 ;;     (add-hook 'magit-diff-mode-hook 'cda-magit-diff-hook)
 ;;     (add-hook 'magit-branch-manager-mode-hook 'cda-magit-branch-manager-hook)))
 ;; (add-hook 'message-mode-hook 'cda-message-hook)
+(add-hook 'shell-mode-hook 'cda-shell-hook)
 (add-hook 'eshell-mode-hook 'cda-eshell-hook)
 ;; (add-hook 'doc-view-mode-hook 'cda-doc-view-hook)
 ;; (eval-after-load 'helm '(require 'cda-helm))
