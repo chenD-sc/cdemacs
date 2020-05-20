@@ -17,9 +17,6 @@
 (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (setq enable-local-variables :all)
 
-;;* Package
-;; (package-initialize)
-
 ;;* Font
 (defun cda-set-font (&optional frame)
   (when frame
@@ -39,7 +36,7 @@
   (defun org-buffer-face-mode-variable ()
     (interactive)
     (make-face 'width-font-face)
-    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 15")
+    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 14")
     (setq buffer-face-mode-face 'width-font-face)
     (buffer-face-mode))
 
@@ -254,6 +251,7 @@
 (bookmark-maybe-load-default-file)
 ;;** windows
 (require 'cda-avy)
+(require 'watch-other-window)
 ;;** rest
 (require 'hydra)
 (setq hydra--work-around-dedicated nil)
@@ -279,22 +277,23 @@
 (use-package flyspell
   :commands flyspell-mode
   :config (require 'cda-flyspell))
-;; (use-package projectile
-;;   :diminish projectile-mode
-;;   :init
-;;   (setq projectile-mode-line nil)
-;;   (projectile-global-mode)
-;;   (setq projectile-project-root-files-bottom-up
-;;         '(".git" ".projectile"))
-;;   (setq projectile-completion-system 'ivy)
-;;   (setq projectile-indexing-method 'alien)
-;;   (setq projectile-enable-caching nil)
-;;   (setq projectile-verbose nil)
-;;   (setq projectile-do-log nil)
-;;   (setq projectile-switch-project-action
-;;         (lambda ()
-;;           (dired (projectile-project-root))))
-;;   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(use-package projectile
+  :diminish projectile-mode
+  :init
+  (setq projectile-mode-line nil)
+  ;; (projectile-global-mode)
+  (setq projectile-project-root-files-bottom-up
+        '(".git" ".projectile"))
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-enable-caching nil)
+  (setq projectile-verbose nil)
+  (setq projectile-do-log nil)
+  (setq projectile-switch-project-action
+        (lambda ()
+          (dired (projectile-project-root))))
+  ;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  )
 (use-package find-file-in-project
   :commands find-file-in-project)
 (use-package magit

@@ -1,7 +1,9 @@
 (add-hook 'scheme-mode-hook 'cda-scheme-hook)
 (add-hook 'python-mode-hook 'cda-python-hook)
 ;; (add-hook 'markdown-mode-hook 'cda-markdown-hook)
-;; (add-hook 'org-mode-hook 'cda-org-hook)
+(add-hook 'LaTeX-mode-hook 'cda-latex-hook)
+(add-hook 'latex-mode-hook 'cda-latex-hook)
+(add-hook 'org-mode-hook 'cda-org-hook)
 (add-hook 'emacs-lisp-mode-hook 'cda-emacs-lisp-hook)
 (add-hook 'lisp-interaction-mode-hook 'cda-lisp-interaction-hook)
 ;; (eval-after-load 'magit

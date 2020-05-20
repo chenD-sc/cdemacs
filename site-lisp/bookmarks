@@ -1,0 +1,9 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("常用数学符号的LaTeX表示方法"
+ (handler . eaf--bookmark-restore)
+ (eaf-app . "browser")
+ (filename . "http://mohu.org/info/symbols/symbols.htm"))
+)

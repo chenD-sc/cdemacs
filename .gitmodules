@@ -133,3 +133,6 @@
 [submodule "site-lisp/git/popup-el"]
 	path = site-lisp/git/popup-el
 	url = https://github.com/auto-complete/popup-el
+[submodule "site-lisp/git/watch-other-window"]
+	path = site-lisp/git/watch-other-window
+	url = https://www.github.com/manateelazycat/watch-other-window

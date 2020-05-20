@@ -71,6 +71,33 @@
 (global-set-key (kbd "C-β") nil)                               ; [b]
 (global-set-key (kbd "C-ν") 'cda-angles)                       ; [n]
 (global-set-key (kbd "C-μ") 'headlong-bookmark-jump-other)     ; [m]
+;;* Alt Mod4 shortcuts
+(global-set-key (kbd "M-θ") nil)                               ; [q]
+(global-set-key (kbd "M-ω") nil)                               ; [w]
+(global-set-key (kbd "M-=") nil)                               ; [e]
+(global-set-key (kbd "M-ρ") nil)                               ; [r]
+(global-set-key (kbd "M-~") nil)                               ; [t]
+(global-set-key (kbd "M-υ") nil)                               ; [y]
+(global-set-key (kbd "M-ψ") nil)                               ; [u]
+(global-set-key [M-tab] nil)                                   ; [i]
+(global-set-key [M-backspace] nil)                             ; [o]
+(global-set-key (kbd "M-π") nil)                               ; [p]
+(global-set-key (kbd "M--") nil)                               ; [a]
+(global-set-key (kbd "M-_") nil)                               ; [u]
+(global-set-key (kbd "M-:") nil)                               ; [d]
+(global-set-key (kbd "M-φ") nil)                               ; [f]
+(global-set-key (kbd "M->") 'watch-other-window-down)          ; [g]
+(global-set-key (kbd "M-η") nil)                               ; [h]
+(global-set-key (kbd "M-;") 'watch-other-window-up-line)       ; [j]
+(global-set-key (kbd "M-κ") 'watch-other-window-down-line)     ; [k]
+(global-set-key (kbd "M-<") 'watch-other-window-up)            ; [l]
+(global-set-key (kbd "M-+") nil)                               ; [z]
+(global-set-key (kbd "M-χ") nil)                               ; [x]
+(global-set-key (kbd "M-σ") nil)                               ; [c]
+(global-set-key (kbd "<M-return>") nil)                        ; [v]
+(global-set-key (kbd "M-β") nil)                               ; [b]
+(global-set-key (kbd "M-ν") nil)                               ; [n]
+(global-set-key (kbd "M-μ") nil)                               ; [m]
 ;;* Mod4 shortcuts
 (global-set-key "θ" 'cda-quotes)                             ; [q]
 ;; (global-set-key "ω" 'self-insert-command)                 ; [w]
@@ -405,10 +432,9 @@ _v_ariable     valu_e_"
 
 ;;** EAF
 (lazy-load-global-keys
- (
+ '(
   ("s-'" . hydra-eaf-menu/body)
   )
  "cda-eaf")
-
 
 (provide 'keys)

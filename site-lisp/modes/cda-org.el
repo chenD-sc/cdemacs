@@ -36,6 +36,12 @@
 (setq org-hide-emphasis-markers t)
 (put 'org-hide-emphasis-markers 'safe-local-variable 'identity)
 
+(defun eaf-org-open-file (file &optional link)
+  "An wrapper function on `eaf-open'."
+  (eaf-open file))
+;; use `emacs-application-framework' to open PDF file: link
+(add-to-list 'org-file-apps '("\\.pdf\\" . eaf-org-open-file))
+
 ;;;###autoload
 (defun cda-org-hook ()
   (worf-mode)
