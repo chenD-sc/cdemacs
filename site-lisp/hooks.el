@@ -1,5 +1,6 @@
 (add-hook 'scheme-mode-hook 'cda-scheme-hook)
 (add-hook 'python-mode-hook 'cda-python-hook)
+(add-hook 'inferior-python-mode-hook 'ora-inferior-python-hook)
 ;; (add-hook 'markdown-mode-hook 'cda-markdown-hook)
 (add-hook 'LaTeX-mode-hook 'cda-latex-hook)
 (add-hook 'latex-mode-hook 'cda-latex-hook)

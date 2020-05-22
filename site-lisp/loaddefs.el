@@ -32,7 +32,7 @@
 ;;;### (autoloads nil "modes/cda-eaf" "modes/cda-eaf.el" (0 0 0 0))
 ;;; Generated autoloads from modes/cda-eaf.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-eaf" '("hydra-eaf-menu")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-eaf" '("hydra-eaf-")))
 
 ;;;***
 
@@ -68,6 +68,38 @@ Correct the first misspelled word that occurs before point.
 But don't look beyond what's visible on the screen." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modes/cda-flyspell" '("flyspell-ignore-http-and-https")))
+
+;;;***
+
+;;;### (autoloads nil "modes/cda-insert" "modes/cda-insert.el" (0
+;;;;;;  0 0 0))
+;;; Generated autoloads from modes/cda-insert.el
+
+(autoload 'cda-quotes "modes/cda-insert" "\
+
+
+\(fn ARG)" t nil)
+
+(autoload 'cda-single-quotes "modes/cda-insert" "\
+
+
+\(fn ARG)" t nil)
+
+(autoload 'cda-parens "modes/cda-insert" nil t nil)
+
+(autoload 'cda-dollars "modes/cda-insert" nil t nil)
+
+(autoload 'cda-brackets "modes/cda-insert" nil t nil)
+
+(autoload 'cda-braces "modes/cda-insert" nil t nil)
+
+(autoload 'cda-braces-c++ "modes/cda-insert" "\
+Insert {}.
+Threat is as function body when from endline before )" t nil)
+
+(autoload 'cda-angles-c++ "modes/cda-insert" nil t nil)
+
+(autoload 'cda-angles "modes/cda-insert" nil t nil)
 
 ;;;***
 

@@ -8,13 +8,6 @@
     (add-to-list 'load-path dir)
     (normal-top-level-add-subdirs-to-load-path)))
 (cda-add-subdirs emacs-d)
-;; (let ((emacs-git (expand-file-name "git/" emacs-d)))
-;;   (mapc (lambda (x)
-;;           (add-to-list 'load-path (expand-file-name x emacs-git)))
-;;         (delete "." (delete ".." (directory-files emacs-git)))))
-;; (add-to-list 'load-path (expand-file-name "git/org-mode/lisp/" emacs-d))
-;; (add-to-list 'load-path emacs-d)
-;; (add-to-list 'load-path (expand-file-name "modes/" emacs-d))
 (setq enable-local-variables :all)
 
 ;;* Font
@@ -36,7 +29,7 @@
   (defun org-buffer-face-mode-variable ()
     (interactive)
     (make-face 'width-font-face)
-    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 14")
+    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 12")
     (setq buffer-face-mode-face 'width-font-face)
     (buffer-face-mode))
 

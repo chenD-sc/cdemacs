@@ -26,6 +26,36 @@
 ;;   (interactive)
 ;;   (eaf-open-browser "http://127.0.0.1:4000"))
 
+;;* Interleave
+;;** custom
+(setq eaf-find-alternate-file-in-dired t)
+
+(setq eaf-interleave-org-notes-dir-list '("~/org/interleave/"))
+(setq eaf-interleave-split-direction 'vertical)
+(setq eaf-interleave-disable-narrowing t)
+(setq eaf-interleave-split-lines 20)
+
+;;** key
+(defhydra hydra-eaf-interleave-sync (:color blue)
+  "eaf-interleave-sync"
+  ("." eaf-interleave-sync-current-note "current")
+  ("p" eaf-interleave-sync-previous-note "previous")
+  ("n" eaf-interleave-sync-next-note "next")
+  ("f" nil "cancel"))
+(defhydra hydra-eaf-interleave-note (:color blue)
+  "eaf-interleave-note"
+  ("a" eaf-interleave-add-note "add")
+  ("o" eaf-interleave-open-notes-file "open")
+  ("q" eaf-interleave-quit "note-quit")
+  ("f" nil "cancel"))
+(define-key eaf-interleave-mode-map (kbd "M-ν") 'hydra-eaf-interleave-sync/body) ; [n]
+(define-key eaf-interleave-app-mode-map (kbd "M-ν") 'hydra-eaf-interleave-note/body) ; [n]
+
+;;** hook
+(add-hook 'eaf-pdf-viewer-hook 'eaf-interleave-app-mode)
+(add-hook 'eaf-browser-hook 'eaf-interleave-app-mode)
+(add-hook 'org-mode-hook 'eaf-interleave-mode)
+
 ;;* Key
 (eaf-bind-key undo_action "C-/" eaf-browser-keybinding)
 (eaf-bind-key redo_action "C-?" eaf-browser-keybinding)

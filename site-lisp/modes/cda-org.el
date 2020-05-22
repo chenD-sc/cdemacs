@@ -5,8 +5,9 @@
 (setq org-export-backends '(html latex))
 (setq org-export-with-sub-superscripts nil)
 (setq org-catch-invisible-edits 'smart)
+(setq org-fontify-done-headline nil)
 (require 'org)
-(add-to-list 'load-path (expand-file-name "git/org-mode/contrib/lisp/" emacs-d))
+;; (add-to-list 'load-path (expand-file-name "git/org-mode/contrib/lisp/" emacs-d))
 (require 'org-src)
 (use-package alert
   :defer t)
@@ -628,5 +629,4 @@ _y_: ?y? year       _q_: quit           _L__l__c_: log = ?l?"
         ("gmap" . "http://maps.google.com/maps?q=%s")
         ("omap" . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")))
 
-(require 'pora-org nil t)
 (provide 'cda-org)
