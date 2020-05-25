@@ -428,13 +428,13 @@ _v_ariable     valu_e_"
    ("i" . sdcv-search-input)          ; input word, show in buffer
    (";" . sdcv-search-input+))
  "cda-sdcv"
- "M-ϊ"                                  ; [i]
+ "s-s"                                  ; [i]
  )
 
 ;;** EAF
 (lazy-load-global-keys
  '(
-  ("M-=" . hydra-eaf-menu/body)         ; [e]
+  ("s-e" . hydra-eaf-menu/body)         ; [e]
   )
  "cda-eaf")
 
