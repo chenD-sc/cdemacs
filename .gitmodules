@@ -139,3 +139,6 @@
 [submodule "site-lisp/git/emacs-bash-completion"]
 	path = site-lisp/git/emacs-bash-completion
 	url = https://github.com/szermatt/emacs-bash-completion
+[submodule "site-lisp/git/geiser"]
+	path = site-lisp/git/geiser
+	url = https://gitlab.com/jaor/geiser
