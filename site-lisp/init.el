@@ -19,6 +19,7 @@
     (error
      (ignore-errors
        (set-frame-font "Lucida Sans Typewriter")))))
+
 (cda-set-font)
 (set-face-attribute 'default nil :height (if (eq system-type 'darwin) 120 113))
 (ignore-errors
