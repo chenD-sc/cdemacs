@@ -142,3 +142,12 @@
 [submodule "site-lisp/git/geiser"]
 	path = site-lisp/git/geiser
 	url = https://gitlab.com/jaor/geiser
+[submodule "site-lisp/git/valign"]
+	path = site-lisp/git/valign
+	url = https://github.com/casouri/valign
+[submodule "site-lisp/git/exwm"]
+	path = site-lisp/git/exwm
+	url = https://github.com/ch11ng/exwm
+[submodule "site-lisp/git/xelb"]
+	path = site-lisp/git/xelb
+	url = https://github.com/ch11ng/xelb

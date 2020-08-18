@@ -424,9 +424,9 @@ _v_ariable     valu_e_"
 ;;** SDCV
 (lazy-load-global-keys                ; global key unset
  '(("p" . sdcv-search-pointer)        ; word at point, show in buffer
-   ("y" . sdcv-search-pointer+)       ; word as point, show in tooltip
+   ("o" . sdcv-search-pointer+)       ; word as point, show in tooltip
    ("i" . sdcv-search-input)          ; input word, show in buffer
-   (";" . sdcv-search-input+))
+   ("u" . sdcv-search-input+))
  "cda-sdcv"
  "s-s"                                  ; [i]
  )

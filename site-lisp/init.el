@@ -26,16 +26,6 @@
   (set-fontset-font t nil "Symbola" nil 'append))
 (add-hook 'after-make-frame-functions 'cda-set-font)
 
-(with-eval-after-load 'org
-  (defun org-buffer-face-mode-variable ()
-    (interactive)
-    (make-face 'width-font-face)
-    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 12")
-    (setq buffer-face-mode-face 'width-font-face)
-    (buffer-face-mode))
-
-  (add-hook 'org-mode-hook 'org-buffer-face-mode-variable))
-
 ;;* Bootstrap
 ;;** autoloads
 (load (concat emacs-d "loaddefs.el") nil t)
@@ -124,6 +114,10 @@
   (auto-save-enable)
   (setq auto-save-silent t)
   (setq auto-save-delete-trailing-whitespace t))
+
+;;* EXWM
+;; (require 'cda-exwm)
+(require 'cda-exwm)
 
 ;;* Modes
 ;;** global minor modes
@@ -246,6 +240,7 @@
 ;;** windows
 (require 'cda-avy)
 (require 'watch-other-window)
+(require 'cda-ace-window)
 ;;** rest
 (require 'hydra)
 (setq hydra--work-around-dedicated nil)

@@ -53,7 +53,11 @@
   (add-to-list 'prettify-symbols-alist
                '(":PROPERTIES:" . ":"))
   (prettify-symbols-mode)
-  (setq-local tab-always-indent 'complete))
+  (setq-local tab-always-indent 'complete)
+
+  (require 'valign)
+  (valign-mode)
+  )
 
 (setq org-agenda-max-entries nil)
 
@@ -80,6 +84,8 @@
 (define-key org-mode-map (kbd "C-c C-v") nil)
 (define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)
 (define-key org-agenda-mode-map (kbd "<backspace>") 'cda-org-agenda-unmark-backward)
+;; self
+(define-key org-mode-map (kbd "β") 'org-latex-preview)
 
 (defun cda-org-agenda-unmark-backward ()
   (interactive)
