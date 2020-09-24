@@ -25,6 +25,7 @@
                     (interactive)
                     (start-process "" nil "/usr/bin/slock")))))
 
+(push ?\C-\\ exwm-input-prefix-keys)    ;; 使用Ctrl + \切换输入法
 ;; Multi-monitor
 ;; (require 'exwm-randr)
 ;; (setq exwm-randr-workspace-output-plist '(1 "DP-1"))

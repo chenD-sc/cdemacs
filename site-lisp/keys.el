@@ -218,7 +218,7 @@
 (global-set-key (kbd "C-S-p") 'counsel-rhythmbox-playpause-current-song)
 
 ;; self temp
-(global-set-key (kbd "s-/") 'toggle-input-method)
+(global-set-key (kbd "C-\\") 'toggle-input-method)
 
 
 ;;* Hydras

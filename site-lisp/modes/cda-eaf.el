@@ -10,7 +10,8 @@
 (setq eaf-proxy-host "127.0.0.1")
 (setq eaf-proxy-port "1090")
 
-(eaf-setq eaf-browser-default-zoom "1.10")
+(eaf-setq eaf-browser-default-zoom "1.25")
+(eaf-setq eaf-browser-enable-adblocker "true")
 (eaf-setq eaf-browser-blank-page-url "https://www.startpage.com")
 (eaf-setq eaf-browser-aria2-proxy-host "127.0.0.1")
 (eaf-setq eaf-browser-aria2-proxy-host "9888")
