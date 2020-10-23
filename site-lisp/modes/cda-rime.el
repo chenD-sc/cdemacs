@@ -40,4 +40,4 @@
 ;;;###autoload
 (defun cda-rime-hook ())
 
-(provide 'cda-rime)
+;; (provide 'cda-rime)

@@ -138,6 +138,7 @@
 (global-set-key (kbd "M-a") 'ace-link)
 (global-set-key (kbd "M-u") 'universal-argument)
 
+
 ;;* C-c shortcuts
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'counsel-bookmark)
@@ -419,6 +420,10 @@ _v_ariable     valu_e_"
           t))
         "\n")))))
 
+;;* s shortcuts
+;("s-j" . pyim-convert-string-at-point) ; 与pyim-probe-dynamic-english配合
+;("s-;" . pyim-delete-word-from-personal-buffer)
+
 ;;* Lazy load
 (require 'lazy-load)
 ;;** SDCV
@@ -438,6 +443,13 @@ _v_ariable     valu_e_"
   )
  "cda-eaf")
 
+;;** pyim
+(lazy-load-global-keys
+ '(
+  ("s-j" . pyim-convert-string-at-point) ; 与pyim-probe-dynamic-english配合
+  ("s-;" . pyim-delete-word-from-personal-buffer)
+  )
+ "cda-eaf")
 
 
 (provide 'keys)

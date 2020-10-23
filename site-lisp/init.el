@@ -217,7 +217,8 @@
   :commands centi-assign)
 (require 'keys)
 ;;** Input method
-(require 'cda-rime)
+;(require 'cda-rime)
+(require 'cda-pyim)
 ;;** appearance
 (when (image-type-available-p 'xpm)
   (use-package powerline

@@ -1,6 +1,5 @@
 (require 'exwm)
-;; (require 'exwm-config)
-;; (exwm-config-default)
+(require 'exwm-xim)
 
 (setq exwm-input-global-keys
       `(
@@ -25,7 +24,23 @@
                     (interactive)
                     (start-process "" nil "/usr/bin/slock")))))
 
+(exwm-xim-enable)
 (push ?\C-\\ exwm-input-prefix-keys)    ;; 使用Ctrl + \切换输入法
+
+;; Use class names for all windows except for
+;; Java applications and GIMP.
+(add-hook 'exwm-update-class-hook
+          (lambda ()
+            (unless (or (string-prefix-p "sun-awt-x11-" exwm-instance-name)
+                        (string= "gimp" exwm-instance-name))
+              (exwm-workspace-rename-buffer exwm-class-name))))
+(add-hook 'exwm-update-title-hook
+          (lambda ()
+            (when (or (not exwm-instance-name)
+                      (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+                      (string= "gimp" exwm-instance-name))
+              (exwm-workspace-rename-buffer exwm-title))))
+
 ;; Multi-monitor
 ;; (require 'exwm-randr)
 ;; (setq exwm-randr-workspace-output-plist '(1 "DP-1"))
@@ -34,6 +49,8 @@
 ;;             (start-process-shell-command
 ;;              "xrand" nil "xrandr --output DP-1 --right-of DP-2 --auto")))
 ;; (exwm-randr-enable)
+
+
 
 (exwm-enable)
 
