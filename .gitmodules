@@ -151,3 +151,12 @@
 [submodule "site-lisp/git/xelb"]
 	path = site-lisp/git/xelb
 	url = https://github.com/ch11ng/xelb
+[submodule "site-lisp/git/pyim"]
+	path = site-lisp/git/pyim
+	url = https://github.com/tumashu/pyim
+[submodule "site-lisp/git/pyim-basedict"]
+	path = site-lisp/git/pyim-basedict
+	url = https://github.com/tumashu/pyim-basedict
+[submodule "site-lisp/git/xr"]
+	path = site-lisp/git/xr
+	url = https://github.com/mattiase/xr

@@ -6,8 +6,11 @@
          (end (nth 1 t1))
          (str (buffer-substring-no-properties beg end))
          (collection (nth 2 t1))
-         (comps
-          (completion-all-completions str collection predicate (- end beg))))
+         ;; 临时设置，解决predicate未定义的问题
+         (comps 1)
+         ;; (comps
+         ;;  (completion-all-completions str collection predicate (- end beg)))
+         )
     (if comps
         t1
       (elisp-completion-at-point))))

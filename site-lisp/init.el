@@ -107,16 +107,17 @@
 (csetq browse-url-browser-function 'eaf-open-browser)
 (defalias 'browse-web #'eaf-open-browser)
 ;;** auto save
+;; 不要自动备份，使用auto-save.el
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (use-package auto-save
   :config
   (auto-save-enable)
   (setq auto-save-silent t)
-  (setq auto-save-delete-trailing-whitespace t))
+  (setq auto-save-delete-trailing-whitespace t)
+  )
 
 ;;* EXWM
-;; (require 'cda-exwm)
 (require 'cda-exwm)
 
 ;;* Modes
